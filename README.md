@@ -10,36 +10,42 @@
 
 ```
 cd server
-yarn i
+yarn install
 yarn dev
 ```
 
 ## **Scripts:**
 
 **Production:**
+
 ```
 yarn prod
 ```
 
 **Development:**
+
 ```
 yarn dev
 ```
 
 **Testing:**
+
 ```
 yarn test
 ```
 
 ### Additional info(Дополнительная информация)
+
 [Node.js](https://nodejs.org/en/download/)
 
 If **yarn** not installed:
+
 ```
 npm i -g yarn
 ```
 
 Clone repository:
+
 ```
 git clone git@github.com:Isas2g/SmoothieFeed.git
 ```
