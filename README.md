@@ -1,4 +1,4 @@
-# Веб Студия
+# Web Studio
 
 ## Server
 
