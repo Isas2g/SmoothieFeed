@@ -4,6 +4,7 @@ dotenv.config({ path: "./src/.env" });
 
 import express, { Application } from "express";
 import { connect } from "./database/db";
+import { User } from "./entity/User";
 
 const start = async () => {
   try {
@@ -16,6 +17,13 @@ const start = async () => {
     // Connect to the database
     const orm = await connect();
     await orm.synchronize();
+
+    const user = new User();
+    user.username = 'test'
+    user.email = 'test@mail.ru'
+    user.password = '123'
+    const rep = orm.getRepository(User)
+    rep.create(user)
 
     console.log("Connected to the database.");
 
