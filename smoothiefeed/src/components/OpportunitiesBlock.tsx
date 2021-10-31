@@ -1,5 +1,7 @@
 import React from 'react';
 
+// TODO: Сделать компонентом opportunity? Таких блоков должно быть 3
+
 const OpportunitiesBlock = () => {
     return (
         <div className="opportunities">
@@ -7,7 +9,7 @@ const OpportunitiesBlock = () => {
             <div className="opportunities__opportunity opportunity">
                 <div className="opportunity__item">
                     <div className="opportunity__icon"></div>
-                    <h4 className="opportunity__description"></h4> // TODO: Сделать компонентом opportunity? Таких блоков должно быть 3
+                    <h4 className="opportunity__description"></h4>
                 </div>
             </div>
         </div>
