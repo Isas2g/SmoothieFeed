@@ -1,13 +1,20 @@
 @import "__header";
 @import "__main";
 @import "__colors";
+@import "__entry-form";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
   background: linear-gradient(-45deg, #dfdb9c, #e6f6d1) no-repeat;
   background-attachment: fixed;
   font-size: 14px;
   color: $text-dark-color;
-  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 a {
@@ -18,6 +25,7 @@ a {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 1;
 }
 
 .container {

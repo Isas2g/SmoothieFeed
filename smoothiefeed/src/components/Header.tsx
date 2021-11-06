@@ -19,7 +19,7 @@ const Header = () => {
                                 <li className="nav__li"><Link to="#">О приложении</Link></li>
                             </ul>
                         </nav>
-                        <a className="header__profile profile" href="#">
+                        <a className="header__profile profile" href="/entry">
                             <svg width="40" height="40" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <ellipse cx="27.6579" cy="27.5987" rx="27.6579" ry="27.5987" fill="#A36E5C"/>
                                 <path

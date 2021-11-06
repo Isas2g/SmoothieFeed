@@ -2,6 +2,7 @@
 
 .header {
     position: relative;
+    z-index: 2;
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -25,7 +26,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.123);
     position: absolute;
     top: 50%;
-    z-index: -1;
+    z-index: 1;
     margin-top: -25px;
     background-color: $header-bg-color;
 }
