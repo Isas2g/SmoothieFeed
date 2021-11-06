@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -6,16 +7,16 @@ const Header = () => {
             <header className="header">
                 <div className="container--lg">
                     <div className="header__inner">
-                        <a href="#">
+                        <Link to="/">
                             <img className="header__logo logo" src="/img/logo.png" alt="123" />
-                        </a>
+                        </Link>
                         <nav className="header__nav nav">
                             <ul className="nav__list">
-                                <li className="nav__li"><a href="#">Главная</a></li>
-                                <li className="nav__li"><a href="#">Посты</a></li>
-                                <li className="nav__li"><a href="#">Выбор детокса</a></li>
-                                <li className="nav__li"><a href="#">Достижения</a></li>
-                                <li className="nav__li"><a href="#">О приложении</a></li>
+                                <li className="nav__li"><Link to="/">Главная</Link></li>
+                                <li className="nav__li"><Link to="/news">Посты</Link></li>
+                                <li className="nav__li"><Link to="#">Выбор детокса</Link></li>
+                                <li className="nav__li"><Link to="#">Достижения</Link></li>
+                                <li className="nav__li"><Link to="#">О приложении</Link></li>
                             </ul>
                         </nav>
                         <a className="header__profile profile" href="#">
