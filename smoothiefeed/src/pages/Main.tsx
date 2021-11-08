@@ -13,7 +13,7 @@ const Main = () => {
                                 <h1 className="preview__title">Заголовок</h1>
                                 <h3 className="preview__description">Выбери уже существующую программу digital-детокса или
                                     создай свою!</h3>
-                                <button className="preview__button learn-button">Ознакомиться</button>
+                                <button className="preview__button action-button">Ознакомиться</button>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ const Main = () => {
                                 </div>
                             </div>
                             <div className="how-it-works__button">
-                                <button className="learn-button">Ознакомиться</button>
+                                <button className="action-button">Ознакомиться</button>
                             </div>
                         </div>
                     </div>

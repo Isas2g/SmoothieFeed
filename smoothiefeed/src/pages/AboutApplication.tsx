@@ -1,13 +1,12 @@
 import React from 'react';
 import Header from "../components/Header";
+import MainAboutApplication from "../components/MainAboutApplication";
 
 const AboutApplication = () => {
     return (
         <div>
             <Header />
-            <main className="main">
-
-            </main>
+            <MainAboutApplication />
         </div>
     );
 };

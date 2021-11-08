@@ -30,7 +30,7 @@ const FormUserPrograms = () => {
                 <input className="your-program__input" type="text" id="program-count"/>
             </div>
             <div className="your-program__submit">
-                <button className="learn-button" type="submit">Создать</button>
+                <button className="action-button" type="submit">Создать</button>
             </div>
         </form>
     );

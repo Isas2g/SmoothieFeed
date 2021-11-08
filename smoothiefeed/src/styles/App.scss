@@ -70,15 +70,7 @@ a {
 //  background: url("../../public/img/bg-banana.png") 100% 0 / auto 40% no-repeat;
 //}
 
-.learn-button {
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
-  background-color: $learn-button-bg-color;
-  color: $learn-button-color;
-  border-radius: 2rem;
-}
-
-.create-button {
+.action-button {
   padding: 1rem 2rem;
   font-size: 1.5rem;
   background-color: $learn-button-bg-color;
@@ -96,6 +88,10 @@ a {
 .main-title {
   text-align: center;
   padding: 3rem 0;
+}
+
+.main-text {
+  font-size: 1.5rem;
 }
 
 h1 {

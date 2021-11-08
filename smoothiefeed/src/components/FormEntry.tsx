@@ -19,7 +19,6 @@ const FormEntry = () => {
                 <input className="sign-up-button" type="submit" value="Войти" id="submit" />
                 <h4>Нет аккаунта? <a className="entry-form__sign-in" href="#">Регистрация</a></h4>
             </div>
-
         </form>
     );
 };
