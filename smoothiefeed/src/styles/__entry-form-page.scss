@@ -100,9 +100,6 @@ a {
         background-color: $entry-form-input;
     }
 
-    input {
-        pointer-events: none;
-    }
     &__input-text::placeholder {
         color: #000;
         opacity: 30%;

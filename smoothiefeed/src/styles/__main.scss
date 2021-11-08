@@ -1,3 +1,12 @@
+.main {
+    padding-bottom: 10rem;
+    &__programs {
+        margin-top: 7rem;
+    }
+    &__hr-line {
+        margin: 6rem 0 3rem 0;
+    }
+}
 
 .preview {
     width: 30%;
@@ -31,7 +40,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $how-it-works-icon;
+        background-color: $programs-icon-bg;
     }
 
     &__text {
@@ -126,13 +135,8 @@
         white-space: nowrap;
     }
 }
-
 .review:not(:first-of-type) {
     margin-top: 3rem;
-}
-
-.reviews {
-    padding-bottom: 5rem;
 }
 
 .news {
@@ -151,16 +155,22 @@
         padding: 3rem 0;
     }
 }
-
 .filter {
     flex-basis: 25%;
-    background-color: rgb(145, 145, 145);
-    height: 400px;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.137);
-}
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px 100px;
 
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__facebook-svg {
+        border-radius: 0.5rem;
+    }
+}
 .post {
     background-color: $news-bg;
     margin-left: 2rem;
@@ -191,15 +201,56 @@
         margin-top: 1.5rem;
     }
 }
-
 .post:not(:first-of-type) {
     margin-top: 2rem;
 }
-
 .tomorrow-button {
     background-color: $tomorrow-button-bg;
     color: $tomorrow-button-text;
     padding: 1rem 2rem;
     border-radius: 2rem;
     font-size: 1.2rem;
+}
+
+.your-program {
+    &__icon {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $programs-icon-bg;
+    }
+    &__block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__post-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: 0 2rem 0 2rem;
+    }
+    &__input {
+        width: 4.5rem;
+        height: 3rem;
+        border-radius: 0.5rem;
+        text-align: center;
+    }
+
+    &__other {
+        display: flex;
+        align-items: center;
+    }
+
+    &__or {
+        font-size: 2rem;
+        margin: 0 2rem;
+    }
+    &__submit {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
 }

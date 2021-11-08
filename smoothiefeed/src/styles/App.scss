@@ -1,7 +1,7 @@
 @import "__header";
 @import "__main";
 @import "__colors";
-@import "__entry-form";
+@import "_entry-form-page";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
@@ -71,6 +71,14 @@ a {
 //}
 
 .learn-button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: $learn-button-bg-color;
+  color: $learn-button-color;
+  border-radius: 2rem;
+}
+
+.create-button {
   padding: 1rem 2rem;
   font-size: 1.5rem;
   background-color: $learn-button-bg-color;

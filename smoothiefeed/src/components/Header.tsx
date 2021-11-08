@@ -14,7 +14,7 @@ const Header = () => {
                             <ul className="nav__list">
                                 <li className="nav__li"><Link to="/">Главная</Link></li>
                                 <li className="nav__li"><Link to="/news">Посты</Link></li>
-                                <li className="nav__li"><Link to="#">Выбор детокса</Link></li>
+                                <li className="nav__li"><Link to="/programs">Выбор детокса</Link></li>
                                 <li className="nav__li"><Link to="#">Достижения</Link></li>
                                 <li className="nav__li"><Link to="#">О приложении</Link></li>
                             </ul>
