@@ -6,6 +6,8 @@ import MainNews from "./pages/MainNews";
 import Main from "./pages/Main";
 import Entry from "./pages/Entry";
 import Programs from "./pages/Programs";
+import Achievements from "./pages/Achievements";
+import AboutApplication from "./pages/AboutApplication";
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
             <Route path="/news" element={<MainNews />} />
             <Route path="/entry" element={<Entry />} />
             <Route path="/programs" element={<Programs />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/about" element={<AboutApplication />} />
         </Routes>
     </BrowserRouter>
   );

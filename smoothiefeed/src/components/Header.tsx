@@ -15,8 +15,8 @@ const Header = () => {
                                 <li className="nav__li"><Link to="/">Главная</Link></li>
                                 <li className="nav__li"><Link to="/news">Посты</Link></li>
                                 <li className="nav__li"><Link to="/programs">Выбор детокса</Link></li>
-                                <li className="nav__li"><Link to="#">Достижения</Link></li>
-                                <li className="nav__li"><Link to="#">О приложении</Link></li>
+                                <li className="nav__li"><Link to="/achievements">Достижения</Link></li>
+                                <li className="nav__li"><Link to="/about">О приложении</Link></li>
                             </ul>
                         </nav>
                         <a className="header__profile profile" href="/entry">
