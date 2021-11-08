@@ -1,13 +1,13 @@
 import React from 'react';
 import HeaderEntry from "../components/HeaderEntry";
-import SignInMain from "../components/SignInMain";
+import MainSignIn from "../components/MainSignIn";
 
 
 const Entry = () => {
     return (
         <div className="container-bg-image-social">
             <HeaderEntry />
-            <SignInMain />
+            <MainSignIn />
         </div>
     );
 };

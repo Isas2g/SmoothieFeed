@@ -10,7 +10,6 @@ const HeaderEntry = () => {
                     <h2 className="header-entry__title"><span className="logo--dark-green">S</span>moothie<span className="logo--dark-green">F</span>eed</h2>
                 </Link>
             </div>
-
         </header>
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import FormEntry from "./FormEntry";
 
-const SignInMain = () => {
+const MainSignIn = () => {
     return (
         <main>
             <div className="main__entry entry">
@@ -22,4 +22,4 @@ const SignInMain = () => {
     );
 };
 
-export default SignInMain;
+export default MainSignIn;
