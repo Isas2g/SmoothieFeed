@@ -1,3 +1,5 @@
 # Server
 server/node_modules
-server/src/.env 
+server/src/.env
+server/SmoothieFeed/.env
+server/SmoothieFeed/venv
