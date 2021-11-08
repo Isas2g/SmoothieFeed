@@ -1,0 +1,5 @@
+git <?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/text_input_layout_color_green" android:state_focused="true"/>
+    <item android:color="@color/non_active_view_color_grey"/>
+</selector>

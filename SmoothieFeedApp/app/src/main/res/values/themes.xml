@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SmoothieFeedApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/text_input_layout_color_green</item>
+<!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
+<!--        <item name="colorOnPrimary">@color/white</item>-->
+        <!-- Secondary brand color. -->
+<!--        <item name="colorSecondary">@color/teal_200</item>-->
+<!--        <item name="colorSecondaryVariant">@color/teal_700</item>-->
+<!--        <item name="colorOnSecondary">@color/black</item>-->
+        <!-- Status bar color. -->
+<!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
+        <!-- Customize your theme here. -->
+        <item name="android:colorControlActivated">@color/black</item>
+    </style>
+
+    <style name="Button" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">@color/non_active_view_color_grey</item>
+        <item name="android:textColor">@color/non_active_view_color_grey</item>
+        <item name="rippleColor">@color/color_transparent</item>
+    </style>
+
+    <style name="LoginFragmentTextView">
+        <item name="android:textColor">@color/text_input_layout_color_green</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="RegistrationFragmentTIL" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/selector_text_field</item>
+        <item name="hintTextColor">@color/black</item>
+        <item name="errorTextColor">@color/red_error</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="errorIconDrawable" />
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">16dp</item>
+        <item name="android:layout_marginVertical" tools:targetApi="o">8dp</item>
+        <item name="boxStrokeErrorColor">@color/red_error</item>
+        <item name="boxStrokeWidth">@dimen/default_box_stroke_width</item>
+        <item name="boxStrokeWidthFocused">@dimen/default_box_stroke_width_focused</item>
+    </style>
+
+    <style name="RegistrationFragmentEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>
