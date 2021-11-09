@@ -1,4 +1,5 @@
 import React from 'react';
+import CreateProgramButton from "./UI/buttons/CreateProgramButton";
 
 const FormUserPrograms = () => {
     return (
@@ -30,7 +31,7 @@ const FormUserPrograms = () => {
                 <input className="your-program__input" type="text" id="program-count"/>
             </div>
             <div className="your-program__submit">
-                <button className="action-button" type="submit">Создать</button>
+                <CreateProgramButton />
             </div>
         </form>
     );
