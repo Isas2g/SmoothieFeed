@@ -52,4 +52,21 @@ class UserSettingsSerializer(ModelSerializer):
 class SocialMediaPublicSerializer(ModelSerializer):
     class Meta:
         model = SocialMediaPublic
-        fields = '__all__'
+        fields = ('media', 'public_id')
+
+
+class SubscribesSerializer(ModelSerializer):
+    class Meta:
+        model = Subscribes
+        fields = ('public',)
+
+    def create(self, validated_data):
+        user = self.context['user']
+        print(user)
+        print(validated_data['public'])
+        sub = Subscribes(
+            user=user,
+            public=validated_data['public']
+        )
+        sub.save()
+        return sub
