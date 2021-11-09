@@ -74,12 +74,12 @@ class SubscribesCreateView(CreateAPIView, JWTTokenUserAuthentication):
     user_id = None
 
     def create(self, request, *args, **kwargs):
-        self.user_id = 5
+        user, validated_token = self.authenticate(request)
+        self.user_id = user.pk
         if isinstance(request.data, dict):
             detail = {'detail': 'Ожидался list со значениями, но был получен \"dict\".'}
             return Response(detail, status=status.HTTP_400_BAD_REQUEST)
-        serializer = SubscribesSerializer(data=request.data, many=True,
-                                          context={'user': self.get_object()})
+        serializer = SubscribesSerializer(data=request.data, many=True, context={'user': self.get_object()})
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
