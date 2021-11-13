@@ -1,18 +1,13 @@
 from rest_framework import mixins, viewsets, status
-from rest_framework.exceptions import ErrorDetail
 from rest_framework.generics import (CreateAPIView,
                                      ListAPIView,
                                      RetrieveUpdateDestroyAPIView,
                                      UpdateAPIView,
                                      RetrieveAPIView,
-                                     RetrieveUpdateAPIView, ListCreateAPIView, get_object_or_404,
+                                     RetrieveUpdateAPIView, ListCreateAPIView, get_object_or_404
                                      )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.settings import api_settings
-from rest_framework.utils.serializer_helpers import ReturnDict
-from rest_framework.views import APIView
-from rest_framework_simplejwt.authentication import JWTAuthentication, JWTTokenUserAuthentication
 
 from .models import *
 from .serializers import *
@@ -59,38 +54,51 @@ class SocialMediaPublicCreateView(CreateAPIView):
     queryset = SocialMediaPublic.objects.all()
 
     def create(self, request, *args, **kwargs):
-        serializer = SocialMediaPublicSerializer(data=request.data, many=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        data = []
+        errors = {}
+        request_data = request.data if isinstance(request.data, list) else [request.data]
+        for i in request_data:
+            serializer = self.get_serializer(data=i)
+            serializer.is_valid()
+            error_flag = False
+            for j in serializer.errors:
+                errors[j] = list(set(errors.get(j, []) + serializer.errors[j]))
+                error_flag = True
+            if not error_flag:
+                data.append(i)
+        if errors:
+            detail = {**errors, **{'save': data}}
+            return Response(detail, status=status.HTTP_400_BAD_REQUEST)
+        return Response(data, status=status.HTTP_201_CREATED)
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-class SubscribesCreateView(CreateAPIView, JWTTokenUserAuthentication):
+class SubscribesCreateView(CreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = SubscribesSerializer
+
     user_id = None
 
     def create(self, request, *args, **kwargs):
-        user, validated_token = self.authenticate(request)
-        self.user_id = user.pk
-        if isinstance(request.data, dict):
-            detail = {'detail': 'Ожидался list со значениями, но был получен \"dict\".'}
+        data = []
+        errors = {}
+        request_data = request.data if isinstance(request.data, list) else [request.data]
+        for i in request_data:
+            serializer = self.get_serializer(data=i)
+            serializer.is_valid()
+            error_flag = False
+            for j in serializer.errors:
+                errors[j] = list(set(errors.get(j, []) + serializer.errors[j]))
+                error_flag = True
+            if not error_flag:
+                data.append(i)
+        if errors:
+            detail = {**errors, **{'save': data}}
             return Response(detail, status=status.HTTP_400_BAD_REQUEST)
-        serializer = SubscribesSerializer(data=request.data, many=True, context={'user': self.get_object()})
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(data, status=status.HTTP_201_CREATED)
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def get_object(self):
-        queryset = self.filter_queryset(self.get_queryset())
+class DetoxLevelView(ListAPIView):
+    serializer_class = DetoxLevelSerializer
+    queryset = DetoxLevel.objects.all()
 
-        filter_kwargs = {'id': self.user_id}
-        obj = get_object_or_404(queryset, **filter_kwargs)
-        self.check_object_permissions(self.request, obj)
-
-        return obj

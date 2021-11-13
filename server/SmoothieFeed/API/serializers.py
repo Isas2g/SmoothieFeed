@@ -1,9 +1,9 @@
-from datetime import timedelta
-from time import time
-
-from rest_framework.serializers import ModelSerializer
+from rest_framework.relations import PrimaryKeyRelatedField
+from rest_framework.serializers import ModelSerializer, IntegerField
+from rest_framework_simplejwt.authentication import JWTTokenUserAuthentication
 
 from .models import *
+from .models.detox_level import DetoxLevel
 
 
 class UsetSerializer(ModelSerializer):
@@ -15,6 +15,17 @@ class UsetSerializer(ModelSerializer):
             'username',
             'email',
             'date_joined',
+        )
+
+
+class DetoxLevelSerializer(ModelSerializer):
+    class Meta:
+        model = DetoxLevel
+        fields = (
+            'level',
+            'name',
+            'post',
+            'time',
         )
 
 
@@ -55,15 +66,19 @@ class SocialMediaPublicSerializer(ModelSerializer):
         fields = ('media', 'public_id')
 
 
-class SubscribesSerializer(ModelSerializer):
+class SubscribesSerializer(ModelSerializer, JWTTokenUserAuthentication):
+    public = PrimaryKeyRelatedField(queryset=SocialMediaPublic.objects.all(),
+                                    required=True,
+                                    error_messages={'required': 'поле public обязательное'})
+
     class Meta:
         model = Subscribes
         fields = ('public',)
 
     def create(self, validated_data):
-        user = self.context['user']
-        print(user)
-        print(validated_data['public'])
+        # user_id = self.authenticate(self.context['request'])[0].pk
+        user_id = 5
+        user = User.objects.get(id=user_id)
         sub = Subscribes(
             user=user,
             public=validated_data['public']
