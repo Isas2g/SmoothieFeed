@@ -1,0 +1,120 @@
+@import "__header";
+@import "__main";
+@import "vars";
+@import "_entry-form-page";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  background: linear-gradient(-45deg, #dfdb9c, #e6f6d1) no-repeat;
+  background-attachment: fixed;
+  font-size: 14px;
+  color: $text-dark-color;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+a {
+  color: $text-dark-color;
+}
+
+.wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.container {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.container--lg {
+  max-width: 85%;
+  margin: 0 auto;
+}
+//
+//.container-bg-image-kiwi {
+//  width: 100%;
+//  position: relative;
+//  background: url("../../public/img/bg-kiwi.png") 100% 60% / auto 90% no-repeat;
+//}
+//.container-bg-image-social {
+//  width: 100%;
+//  position: relative;
+//  background: url("../../public/img/bg-social.png") 60% 0 no-repeat;
+//  z-index: -10;
+//}
+//.container-bg-image-smoothie-social {
+//  width: 100%;
+//  position: relative;
+//  background: url("../../public/img/bg-smoothie.png") 90% 0 / auto 100% no-repeat;
+//}
+//.container-bg-image-smoothie {
+//  width: 100%;
+//  position: relative;
+//  background: url("../../public/img/bg-smoothie-image.png") 0 0 / auto 90% no-repeat;
+//}
+//.container-bg-image-strawberry {
+//  width: 100%;
+//  position: relative;
+//  background: url("../../public/img/bg-strawberry.png") 100% 100% / auto 40% no-repeat;
+//}
+//.container-bg-image-banana {
+//  width: 100%;
+//  position: relative;
+//  background: url("../../public/img/bg-banana.png") 100% 0 / auto 40% no-repeat;
+//}
+
+.action-button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: $learn-button-bg-color;
+  color: $learn-button-color;
+  border-radius: 2rem;
+}
+
+.hr-line {
+  width: 100%;
+  border: 0.5px solid black;
+  background-color: black;
+  opacity: 15%;
+}
+
+.main-title {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.main-text {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
