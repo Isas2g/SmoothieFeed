@@ -1,6 +1,6 @@
-import * as React           from 'react';
+import * as React from 'react';
 
-import Header               from '@components/Header';
+import Header               from '@components/Header/Header';
 import MainAboutApplication from '@components/MainAboutApplication';
 
 const AboutApplication = () => {

@@ -1,5 +1,5 @@
 import React            from 'react';
-import Header           from '../components/Header';
+import Header           from '@components/Header/Header';
 import FormUserPrograms from '../components/FormUserPrograms';
 import MainPrograms     from '../components/MainPrograms';
 

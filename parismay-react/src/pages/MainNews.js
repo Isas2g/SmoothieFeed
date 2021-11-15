@@ -1,5 +1,5 @@
 import React          from 'react';
-import Header         from '../components/Header';
+import Header         from '@components/Header/Header';
 import TomorrowButton from '../components/UI/buttons/TomorrowButton';
 import FilterSocial   from '../components/FilterSocial';
 import PostsNews      from '../components/PostsNews';

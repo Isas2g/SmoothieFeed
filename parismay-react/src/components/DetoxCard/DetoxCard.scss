@@ -1,0 +1,82 @@
+@import '../../styles/vars';
+
+.detox-card {
+  width: 20%;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px #00000028;
+  padding: 3rem 0 2rem 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  cursor: pointer;
+  
+  &__title {
+	width: 100%;
+	padding: 0.5rem;
+	margin-bottom: 2rem;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	
+	border-top: 1px solid #00000028;
+	border-bottom: 1px solid #00000028;
+ 
+	font-family: "Montserrat Bold", sans-serif;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+  }
+  
+  &__details {
+	width: 80%;
+	max-height: 0;
+	margin-bottom: 0;
+	
+	overflow: hidden;
+	
+	transition: margin-bottom .2s, max-height .1s;
+  }
+  
+  &:hover &__details {
+	max-height: 100px;
+	margin-bottom: 3rem;
+  }
+  
+  &__li {
+	list-style: inside;
+ 
+	font-family: "Montserrat Medium", sans-serif;
+	font-size: 1.2rem;
+  }
+  
+  &__image {
+	height: 230px;
+  }
+  
+  &__submit {
+	width: 80%;
+	padding: 1rem;
+	border-radius: 1rem;
+	
+	background-color: $detox-submit-bg;
+	box-shadow: 0 0 15px #00000028;
+	
+	font-family: "Montserrat Bold", sans-serif;
+	font-size: 1.2rem;
+	text-align: center;
+ 
+	margin-bottom: -50px;
+	transform: translateY(-50px);
+	opacity: 0;
+	
+	transition: opacity .2s, transform .2s, margin-bottom .2s;
+  }
+  
+  &:hover &__submit {
+	margin-bottom: 0;
+	transform: translateY(0);
+	opacity: 1;
+  }
+}

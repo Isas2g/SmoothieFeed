@@ -1,6 +1,6 @@
 import React            from 'react';
-import Header           from '../components/Header';
-import AchievementsList from '../components/AchievementsList';
+import Header           from '@components/Header/Header';
+import AchievementsList from '@components/AchievementsList/AchievementsList';
 import MainAchievements from '../components/MainAchievements';
 
 const Achievements = () => {

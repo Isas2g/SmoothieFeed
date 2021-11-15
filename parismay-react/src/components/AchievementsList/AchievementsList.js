@@ -1,4 +1,6 @@
-import React from 'react';
+import * as React from 'react';
+
+import './AchievementsList.scss';
 
 const AchievementsList = () => {
 	return <div className="achievements__list">

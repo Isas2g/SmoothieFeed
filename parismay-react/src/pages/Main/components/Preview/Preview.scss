@@ -1,0 +1,30 @@
+.preview {
+  width: 30%;
+  height: 100vh;
+  padding-top: 200px;
+  
+  &__image {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	
+	z-index: -1;
+	
+	pointer-events: none;
+	
+	&_social {
+	  width: 50%;
+	  top: 34%;
+	  left: 50%;
+	}
+	
+	&_kiwi {
+	  height: 770px;
+	  top: 50%;
+	  left: 65%;
+	}
+  }
+  
+  &__description {
+	margin: 2rem 0 5rem 0;
+  }
+}

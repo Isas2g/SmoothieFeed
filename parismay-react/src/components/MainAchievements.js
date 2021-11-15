@@ -1,5 +1,5 @@
 import React            from 'react';
-import AchievementsList from './AchievementsList';
+import AchievementsList from './AchievementsList/AchievementsList';
 
 const MainAchievements = () => {
 	return <main className="main">
