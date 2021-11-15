@@ -11,3 +11,5 @@ class UserSettings(Model):
 
     class Meta:
         db_table = 'API_user_settings'
+        verbose_name = 'Пользовательская настройка'
+        verbose_name_plural = 'Пользовательские настройки'

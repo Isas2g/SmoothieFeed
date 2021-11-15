@@ -65,6 +65,7 @@ class SocialMediaPublicCreateView(CreateAPIView):
                 errors[j] = list(set(errors.get(j, []) + serializer.errors[j]))
                 error_flag = True
             if not error_flag:
+                serializer.save()
                 data.append(i)
         if errors:
             detail = {**errors, **{'save': data}}
@@ -91,6 +92,7 @@ class SubscribesCreateView(CreateAPIView):
                 errors[j] = list(set(errors.get(j, []) + serializer.errors[j]))
                 error_flag = True
             if not error_flag:
+                serializer.save()
                 data.append(i)
         if errors:
             detail = {**errors, **{'save': data}}

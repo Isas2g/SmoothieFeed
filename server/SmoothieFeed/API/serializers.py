@@ -76,8 +76,8 @@ class SubscribesSerializer(ModelSerializer, JWTTokenUserAuthentication):
         fields = ('public',)
 
     def create(self, validated_data):
-        # user_id = self.authenticate(self.context['request'])[0].pk
-        user_id = 5
+        user_id = self.authenticate(self.context['request'])[0].pk
+        # user_id = 5
         user = User.objects.get(id=user_id)
         sub = Subscribes(
             user=user,

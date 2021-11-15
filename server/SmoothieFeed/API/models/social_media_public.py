@@ -12,4 +12,4 @@ class SocialMediaPublic(Model):
         verbose_name_plural = 'Паблики из социальной сети'
 
     def __str__(self):
-        return f"{self.public_id}"
+        return f"{self.media}: {self.public_id}"

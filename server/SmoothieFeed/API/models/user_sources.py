@@ -12,3 +12,5 @@ class UserSources(Model):
 
     class Meta:
         db_table = 'API_user_sources'
+        verbose_name = 'Пользовательские ресурсы'
+        verbose_name_plural = 'Пользовательские ресурсы'
