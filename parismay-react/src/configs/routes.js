@@ -17,4 +17,7 @@ export const routes = {
 	about: {
 		index: '/about',
 	},
+	tokenPage: {
+		index: '/token_page',
+	},
 };

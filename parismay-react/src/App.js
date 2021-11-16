@@ -14,6 +14,7 @@ import Auth         from '@pages/Auth/Auth';
 import Programs     from '@pages/Programs';
 import Achievements from '@pages/Achievements';
 import AboutUs      from '@pages/AboutUs/AboutUs';
+import TokenPage    from '@pages/TokenPage';
 
 import Header from '@components/Header';
 
@@ -105,6 +106,9 @@ const App = () => {
 			</Route>
 			<Route exact path={routes.about.index}>
 				<AboutUs/>
+			</Route>
+			<Route exact path={routes.tokenPage.index}>
+				<TokenPage/>
 			</Route>
 			<Redirect to={routes.home.index}/>
 		</Switch>

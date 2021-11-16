@@ -11,6 +11,11 @@ const News = ({store}) => {
 	const page = React.useRef(null);
 	
 	React.useEffect(() => {
+		if (localStorage.getItem("vkToken")) {
+			store.fetchVKData();
+		}
+	}, [store]);
+	React.useEffect(() => {
 		const timeout = setTimeout(() => page.current.classList.add('news_active'), 200);
 		
 		return () => clearTimeout(timeout);
