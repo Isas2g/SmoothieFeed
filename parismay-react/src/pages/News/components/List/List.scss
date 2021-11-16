@@ -1,5 +1,14 @@
 .list {
+  position: relative;
+  
   width: 100%;
   max-height: 800px;
   overflow: auto;
+  
+  &__no-posts {
+    font-family: "Montserrat Bold", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    transform: translateX(-100px);
+  }
 }

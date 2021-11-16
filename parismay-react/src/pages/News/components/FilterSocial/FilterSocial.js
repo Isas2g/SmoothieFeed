@@ -6,7 +6,7 @@ import instIcon    from '@assets/images/social-instagram.svg';
 import fbIcon      from '@assets/images/social-facebook.svg';
 import twitterIcon from '@assets/images/social-twitter-2.svg';
 
-import {CLIENT_ID, DEFAULT_REDIRECT_URI} from '@configs/apiUrl';
+import {CLIENT_ID, DEFAULT_REDIRECT_URI, REDIRECT_URI} from '@configs/apiUrl';
 
 import './FilterSocial.scss';
 
@@ -32,7 +32,7 @@ const FilterSocial = () => {
 	
 	return <div className="filter-social">
 		<a
-			href={`https://oauth.vk.com/authorize?client_id=${CLIENT_ID}&redirect_uri=${DEFAULT_REDIRECT_URI}&scope=73730&response_type=token&v=5.131`}
+			href={`https://oauth.vk.com/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=73730&response_type=token&v=5.131`}
 			rel="noreferrer"
 		>
 			<img
