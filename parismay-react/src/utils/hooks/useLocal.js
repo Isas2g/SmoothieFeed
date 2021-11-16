@@ -15,7 +15,7 @@ export const useLocalStore = (creator) => {
 	
 	React.useEffect(() => {
 		return () => store.destroy();
-	}, []);
+	}, [store]);
 	
 	return store;
 }

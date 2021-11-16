@@ -1,3 +1,12 @@
 .main {
   padding: 0 220px;
+  opacity: 0;
+  filter: blur(20px);
+  
+  transition: opacity .2s .2s, filter .2s;
+  
+  &_active {
+    opacity: 1;
+    filter: none;
+  }
 }

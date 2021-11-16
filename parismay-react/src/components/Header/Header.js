@@ -1,5 +1,6 @@
-import * as React from 'react';
-import {Link}     from 'react-router-dom';
+import * as React          from 'react';
+import {Link, useLocation} from 'react-router-dom';
+import cn from 'classnames';
 
 import logo    from '@assets/images/logo.png';
 import theme   from '@assets/images/theme.svg';
@@ -10,17 +11,34 @@ import './Header.scss';
 import {routes} from '@configs/routes';
 
 const Header = () => {
+	const location = useLocation();
+	
 	return <header className="header">
 		<Link to={routes.home.index}>
 			<img className="header__logo" src={logo} alt="Smoothie Feed"/>
 		</Link>
 		<nav className="header__nav nav">
 			<div className="nav__list">
-				<Link className="nav__link" to={routes.home.index}>Главная</Link>
-				<Link className="nav__link" to={routes.news.index}>Посты</Link>
-				<Link className="nav__link" to={routes.programs.index}>Выбор детокса</Link>
-				<Link className="nav__link" to={routes.achievements.index}>Достижения</Link>
-				<Link className="nav__link" to={routes.about.index}>О приложении</Link>
+				<Link
+					className={cn("nav__link", location.pathname === routes.home.index ? 'nav__link_active' : null)}
+					to={routes.home.index}
+				>Главная</Link>
+				<Link
+					className={cn("nav__link", location.pathname === routes.news.index ? 'nav__link_active' : null)}
+					to={routes.news.index}
+				>Посты</Link>
+				<Link
+					className={cn("nav__link", location.pathname === routes.programs.index ? 'nav__link_active' : null)}
+					to={routes.programs.index}
+				>Выбор детокса</Link>
+				<Link
+					className={cn("nav__link", location.pathname === routes.achievements.index ? 'nav__link_active' : null)}
+					to={routes.achievements.index}
+				>Достижения</Link>
+				<Link
+					className={cn("nav__link", location.pathname === routes.about.index ? 'nav__link_active' : null)}
+					to={routes.about.index}
+				>О приложении</Link>
 			</div>
 		</nav>
 		<Link to={routes.auth.index}>

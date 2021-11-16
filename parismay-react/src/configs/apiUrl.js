@@ -1,6 +1,6 @@
 export const apiUrl = {
 	vk: {
-		url: '#',
+		url: `#`,
 	},
 	instagram: {
 		url: '#',

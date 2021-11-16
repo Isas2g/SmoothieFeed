@@ -1,0 +1,67 @@
+@import '../../../../../../styles/vars';
+
+.post {
+  margin: 0 2rem 2rem 2rem;
+  padding: 1rem 2rem 1rem 4rem;
+  border-radius: 1rem;
+  
+  background-color: $news-bg;
+  box-shadow: 0 5px 15px #00000033;
+  
+  &__header {
+	display: flex;
+	align-items: flex-start;
+  }
+  
+  &__info {
+	padding-left: 3rem;
+	margin-top: 1rem;
+  }
+  
+  &__title {
+	margin-bottom: .5rem;
+	
+	font-family: "Montserrat Bold", sans-serif;
+	font-size: 1.2rem;
+  }
+  
+  &__time {
+	font-family: "Montserrat Medium", sans-serif;
+  }
+  
+  &__icon {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: #BBBBBBFF;
+  }
+  
+  &__body {
+	width: 100%;
+	margin-top: 1.5rem;
+  }
+}
+
+.post-body {
+  &__text {
+	margin-bottom: 2rem;
+	
+	font-family: "Montserrat Medium", sans-serif;
+  }
+  
+  &__attachments {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  }
+  
+  &__photo {
+	height: 300px;
+	margin: 0 2rem 2rem 0;
+	
+	flex: 1 1 30%;
+	
+	background-color: #BBBBBBFF;
+  }
+}

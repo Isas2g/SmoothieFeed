@@ -1,22 +1,29 @@
 import * as React from 'react';
 
 import {
-	BrowserRouter,
 	Switch,
 	Route,
 	Redirect,
-} from 'react-router-dom';
+	useLocation,
+}                      from 'react-router-dom';
+import {useLocalStore} from '@utils/hooks/useLocal';
 
-import Main             from '@pages/Main/Main';
-import MainNews         from '@pages/MainNews';
-import Auth             from '@pages/Auth/Auth';
-import Programs         from '@pages/Programs';
-import Achievements     from '@pages/Achievements';
-import AboutApplication from '@pages/AboutApplication';
+import Main         from '@pages/Main/Main';
+import News         from '@pages/News/News';
+import Auth         from '@pages/Auth/Auth';
+import Programs     from '@pages/Programs';
+import Achievements from '@pages/Achievements';
+import AboutUs      from '@pages/AboutUs/AboutUs';
+
+import Header from '@components/Header';
 
 import {routes} from '@configs/routes';
 
+import MainStore from '@store/MainStore';
+
 const App = () => {
+	const mainStore = useLocalStore(() => new MainStore());
+	
 	const [detoxPrograms, setPrograms] = React.useState({
 			easy: {
 				time: 0,
@@ -73,7 +80,10 @@ const App = () => {
 		]);
 	}, []);
 	
-	return <BrowserRouter>
+	const location = useLocation();
+	
+	return <div>
+		{location?.pathname !== routes.auth.index && <Header/>}
 		<Switch>
 			<Route exact path={routes.home.index}>
 				<Main
@@ -82,7 +92,7 @@ const App = () => {
 				/>
 			</Route>
 			<Route exact path={routes.news.index}>
-				<MainNews/>
+				<News store={mainStore}/>
 			</Route>
 			<Route exact path={routes.auth.index}>
 				<Auth/>
@@ -94,11 +104,11 @@ const App = () => {
 				<Achievements/>
 			</Route>
 			<Route exact path={routes.about.index}>
-				<AboutApplication/>
+				<AboutUs/>
 			</Route>
 			<Redirect to={routes.home.index}/>
 		</Switch>
-	</BrowserRouter>;
+	</div>;
 };
 
 export default App;

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { apiUrl } from "@configs/apiUrl";
+import {apiUrl} from '@configs/apiUrl';
 
 export const requestVKData = async () => {
 	try {
@@ -8,7 +8,6 @@ export const requestVKData = async () => {
 			apiUrl.vk.url,
 			{
 				params: {
-				
 				}
 			}
 		);

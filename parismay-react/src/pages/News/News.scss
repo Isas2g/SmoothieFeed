@@ -1,0 +1,41 @@
+.news {
+  opacity: 0;
+  filter: blur(20px);
+  
+  transition: opacity .2s .2s, filter .2s;
+  
+  &_active {
+	opacity: 1;
+	filter: none;
+  }
+  
+  &__image {
+	width: 50%;
+	
+	position: absolute;
+	top: 30%;
+	left: 80%;
+	transform: translate(-50%, -50%);
+ 
+	opacity: .14;
+	
+	pointer-events: none;
+	z-index: -1;
+  }
+  
+  &__content {
+	padding: 0 100px 0 80px;
+	margin-top: 150px;
+  }
+  
+  &__title {
+	margin-bottom: 2rem;
+	
+	text-align: center;
+  }
+  
+  &__inner {
+	display: flex;
+	align-items: flex-start;
+  }
+}
