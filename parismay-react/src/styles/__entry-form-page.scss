@@ -1,0 +1,131 @@
+@import './vars';
+
+.container-bg-image-social {
+    width: 100%;
+    position: relative;
+    background: url("../assets/images/bg-social.png") 100% 20% / auto 85% no-repeat;
+    z-index: -10;
+    height: 100%;
+}
+
+.logo {
+    &--dark-green {
+        color: $entry-header-dark-text;
+    }
+}
+
+.header-entry {
+    padding: 1.5rem 0 0 0;
+    &__inner {
+        display: flex;
+        justify-content: center;
+    }
+    &__title {
+        font-size: 3rem;
+        padding-left: 1rem;
+        font-weight: 700;
+        color: $entry-header-text;
+    }
+    &__links {
+        display: flex;
+        align-items: center;
+    }
+}
+.sign-up-button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background-color: $learn-button-bg-color;
+    color: $learn-button-color;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+}
+
+.main {
+    &__entry {
+        margin: 3rem auto 0 auto;
+    }
+}
+
+.entry {
+    max-width: 55%;
+    background-color: $entry-form-bg;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.157);
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
+.entry-form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto 1.5rem auto;
+    max-width: 80%;
+    
+    &__input-text {
+        background-color: $entry-form-input;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 3px 5px rgba(27, 27, 27, 0.089);
+    }
+    &__input-text:not(:first-of-type) {
+        margin-top: 1rem;
+    }
+
+    &__input-checkbox {
+        background-color: $entry-form-input;
+    }
+
+    &__input-text::placeholder {
+        color: #000;
+        opacity: 30%;
+    }
+    &__remember {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+    &__forget-password {
+        text-decoration: underline;
+    }
+    &__sign-in {
+        text-decoration: underline;
+    }
+    &__login {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: 1rem;
+        .sign-up-button {
+            width: 40%;
+        }
+    }
+}
+
+.social {
+    margin-top: 1.5rem;
+    &__title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+    }
+    &__icons {
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem auto 0 auto;
+    }
+    &__icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $entry-social-bg;
+    }
+    &__icon:not(:first-of-type) {
+        margin-left: 1rem;
+    }
+}

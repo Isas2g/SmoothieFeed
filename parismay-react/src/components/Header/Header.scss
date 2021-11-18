@@ -1,0 +1,134 @@
+@import "../../styles/vars";
+
+.header {
+  position: fixed;
+  top: 40px;
+  
+  width: 100%;
+  
+  display: flex;
+  align-items: center;
+  
+  padding: 10px 260px;
+  
+  background-color: $header-bg-color;
+  box-shadow: 0 0 20px #0000001F;
+  
+  font-family: 'Montserrat Medium', sans-serif;
+  font-size: 1.1rem;
+  
+  z-index: 5;
+  
+  &__logo {
+	position: absolute;
+	left: 290px;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	
+	height: 90px;
+  }
+  
+  &__nav {
+	padding: 0 100px 0 220px;
+  }
+  
+  &__auth {
+	display: flex;
+	align-items: center;
+  }
+  
+  &__profile {
+	height: 30px;
+	margin-right: 30px;
+  }
+  
+  &__login {
+	position: relative;
+	
+	padding: 5px 0;
+	
+	color: $text-dark-color;
+	
+	transition: .2s;
+	
+	&::after {
+	  content: '';
+	  position: absolute;
+	  bottom: -5px;
+	  left: 0;
+	  
+	  height: 1px;
+	  width: 100%;
+	  
+	  background-color: black;
+	  opacity: 0;
+	  
+	  transition: opacity .2s;
+	  
+	  pointer-events: none;
+	}
+  }
+  
+  &__auth:hover &__login {
+	font-family: 'Montserrat Semi Bold', sans-serif;
+ 
+	&::after {
+	  opacity: .2;
+	}
+  }
+  
+  &__switch-theme {
+	position: absolute;
+	top: 50%;
+	right: 110px;
+	transform: translateY(-50%);
+	
+	cursor: pointer;
+  }
+}
+
+.nav {
+  width: 100%;
+  
+  &__list {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  
+  &__link {
+	position: relative;
+	
+	padding: 5px 15px;
+	
+	color: $text-dark-color;
+	
+	transition: .2s;
+	
+	&::after {
+	  content: '';
+	  position: absolute;
+	  bottom: -5px;
+	  left: 0;
+	  
+	  height: 1px;
+	  width: 100%;
+	  
+	  background-color: black;
+	  opacity: 0;
+	  
+	  transition: opacity .2s;
+	  
+	  pointer-events: none;
+	}
+	
+	&:hover,
+	&_active {
+	  font-family: 'Montserrat Semi Bold', sans-serif;
+	  
+	  &::after {
+		opacity: .2;
+	  }
+	}
+  }
+}

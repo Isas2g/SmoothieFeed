@@ -1,0 +1,38 @@
+.detox-program {
+  position: relative;
+  height: 100vh;
+  padding-top: 200px;
+  
+  &__smoothie {
+	width: 500px;
+ 
+	position: absolute;
+	right: 100%;
+	top: 40%;
+	transform: translate(55%, -50%);
+ 
+	z-index: -1;
+  }
+  
+  &__strawberry {
+	width: 300px;
+	
+	position: absolute;
+	left: 100%;
+	top: 20%;
+	transform: translate(-30%, -50%);
+	
+	z-index: -1;
+  }
+  
+  &__title {
+	text-align: center;
+	padding-bottom: 5rem;
+  }
+  
+  &__cards {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+  }
+}

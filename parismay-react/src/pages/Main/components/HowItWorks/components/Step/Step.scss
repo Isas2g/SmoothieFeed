@@ -1,0 +1,47 @@
+@import '../../../../../../styles/vars';
+
+.step {
+  display: flex;
+  align-items: center;
+  
+  &:not(:first-of-type) {
+	margin-top: 5rem;
+  }
+  
+  &__icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: $programs-icon-bg;
+    
+    & img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+  
+  &__description {
+    padding-left: 1.5rem;
+    height: 60px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  &__title {
+    margin-bottom: auto;
+    
+    font-size: 2rem;
+    font-family: "Montserrat Bold", sans-serif;
+  }
+  
+  &__subtitle {
+    font-size: 1.2rem;
+  }
+}
