@@ -5,8 +5,8 @@ import Review from './components/Review';
 import './Reviews.scss';
 
 const Reviews = ({reviews}) => {
-	return <div className="reviews">
-		<div className="reviews__title title">Отзывы</div>
+	return <div className="reviews container--xl">
+		<h2 className="reviews__title title">Отзывы</h2>
 		<div className="reviews__list">
 			{reviews.map((el, key) => {
 				return <Review key={key} el={el}/>
@@ -14,5 +14,4 @@ const Reviews = ({reviews}) => {
 		</div>
 	</div>;
 };
-
 export default React.memo(Reviews);

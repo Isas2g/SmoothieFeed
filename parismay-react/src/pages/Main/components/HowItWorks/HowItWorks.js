@@ -31,16 +31,18 @@ const HowItWorks = () => {
 		},
 	], []);
 	
-	return <div className="how-it-works">
-		<img className="how-it-works__image" src={smoothie} alt="#"/>
-		<div className="how-it-works__title title">Как это работает?</div>
-		<div className="how-it-works__blocks">
-			{steps.map((el, key) => {
-				return <Step key={key} id={key + 1} el={el}/>;
-			})}
+	return <div className="container-bg-image-smoothie-social">
+		<div className="container">
+			<div className="main__how-it-works how-it-works">
+				<h2 className="how-it-works__title title">Как это работает?</h2>
+				<div className="how-it-works__blocks">
+					{steps.map((el, key) => {
+						return <Step key={key} id={key + 1} el={el}/>;
+					})}
+				</div>
+			</div>
 		</div>
-		<Link className="how-it-works__button action-button" to={routes.programs.index}>Попробовать!</Link>
-	</div>;
+	</div>
 };
 
 export default React.memo(HowItWorks);

@@ -5,7 +5,6 @@ import MainPrograms     from '../components/MainPrograms';
 
 const Programs = () => {
 	return <div>
-		<Header/>
 		<MainPrograms/>
 	</div>;
 };

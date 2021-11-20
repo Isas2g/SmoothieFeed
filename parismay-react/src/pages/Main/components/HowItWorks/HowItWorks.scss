@@ -1,33 +1,29 @@
 @import '../../../../styles/vars';
 
 .how-it-works {
-  position: relative;
-  
-  width: 100%;
-  height: 100vh;
-  padding-top: 200px;
-  
-  display: flex;
-  flex-direction: column;
-  
-  &__image {
-	position: absolute;
-	top: 50%;
-	left: 95%;
-	transform: translate(-50%, -50%);
- 
-	width: 35%;
-	
-	z-index: -1;
-	
-	pointer-events: none;
-  }
-  
+  	position: relative;
+  	display: flex;
+	flex-direction: column;
+	padding: 100px 0;
+
+	&__image {
+		position: absolute;
+		top: 50%;
+		left: 95%;
+		transform: translate(-50%, -50%);
+
+		width: 35%;
+
+		z-index: -1;
+
+		pointer-events: none;
+  	}
+
   &__title {
 	margin-bottom: 7rem;
 	text-align: center;
   }
-  
+
   &__blocks {
 	margin-bottom: 5rem;
   }

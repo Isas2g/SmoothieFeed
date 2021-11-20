@@ -1,4 +1,5 @@
 @import './vars';
+@import './breakpoints';
 
 @font-face {
   font-family: 'Montserrat Black';
@@ -130,10 +131,10 @@ body {
   cursor: pointer;
 }
 
-.title {
-  font-family: "Montserrat Bold", sans-serif;
-  font-size: 4rem;
-}
+//.title {
+//  font-family: "Montserrat Bold", sans-serif;
+//  font-size: 4rem;
+//}
 
 .description {
   font-family: "Montserrat Medium", sans-serif;
@@ -142,4 +143,83 @@ body {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.container {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+.container--lg {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.container--xl {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.container-bg-image-kiwi {
+  width: 100%;
+  position: relative;
+  background: url("../assets/images/bg-kiwi.png") 100% 100% / auto 100% no-repeat;
+}
+.container-bg-image-social {
+  width: 100%;
+  position: relative;
+  background: url("../assets/images/bg-social.png") 60% 0 no-repeat;
+  z-index: -10;
+}
+.container-bg-image-smoothie-social {
+  width: 100%;
+  position: relative;
+  background: url("../assets/images/bg-smoothie.png") 90% 40% / auto 80% no-repeat;
+}
+.container-bg-image-smoothie {
+  width: 100%;
+  position: relative;
+  background: url("../assets/images/bg-smoothie-image.png") -10% 0 / auto 100% no-repeat;
+}
+.container-bg-image-strawberry {
+  width: 100%;
+  position: relative;
+  background: url("../assets/images/bg-strawberry.png") 100% 100% / auto 40% no-repeat;
+}
+.container-bg-image-banana {
+  width: 100%;
+  position: relative;
+  background: url("../assets/images/bg-banana.png") 100% 0 / auto 40% no-repeat;
+}
+
+h1 {
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
+h2 {
+  font-family: "Montserrat Bold", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
 }

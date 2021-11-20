@@ -1,140 +1,143 @@
 @import "../../styles/vars";
+@import "../../styles/breakpoints";
 
 .header {
-	position: relative;
-	z-index: 2;
-	&__inner {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0.7rem 0;
-	}
-	&__nav {
-		flex-basis: 70%;
-	}
-	&__profile {
-		justify-content: flex-end;
-	}
-
 	&__logo {
 		width: 100%;
 		max-width: 70px;
 	}
-
-	&__auth {
-		display: flex;
-		align-items: center;
-	}
-
-	&__profile {
-		height: 30px;
-		margin-right: 30px;
-	}
-
-	&__login {
-		position: relative;
-
-		padding: 5px 0;
-
-		color: $text-dark-color;
-
-		transition: 0.2s;
-
-		&::after {
-			content: "";
-			position: absolute;
-			bottom: -5px;
-			left: 0;
-
-			height: 1px;
-			width: 100%;
-
-			background-color: black;
-			opacity: 0;
-
-			transition: opacity 0.2s;
-
-			pointer-events: none;
-		}
-	}
-
-	&__auth:hover &__login {
-		font-family: "Montserrat Semi Bold", sans-serif;
-
-		&::after {
-			opacity: 0.2;
-		}
-	}
-
-	&__switch-theme {
-		cursor: pointer;
-	}
 }
 
-.nav {
-	&__list {
-		display: flex;
-		justify-content: space-between;
-		height: 20px;
-	}
-
-	&__link {
+@media (min-width: 601px) {
+	.header {
 		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0 1rem;
-		padding: 5px 15px;
-
-		color: $text-dark-color;
-
-		transition: 0.2s;
-
-		&::after {
-			content: "";
-			position: absolute;
-			bottom: -5px;
-			left: 0;
-
-			height: 1px;
-			width: 100%;
-
-			background-color: black;
-			opacity: 0;
-
-			transition: opacity 0.2s;
-
-			pointer-events: none;
+		z-index: 2;
+		&__inner {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0.7rem 0;
+		}
+		&__nav {
+			flex-basis: 70%;
+		}
+		&__profile {
+			justify-content: flex-end;
 		}
 
-		&:hover,
-		&_active {
+		&__auth {
+			display: flex;
+			align-items: center;
+
+		}
+
+		&__profile {
+			height: 30px;
+			margin: 0 15px 0 0;
+		}
+
+		&__login {
+			position: relative;
+			height: 20px;
+			padding: 5px 5px;
+
+			color: $text-dark-color;
+
+			transition: 0.2s;
 
 			&::after {
-				opacity: 0.2;
+				content: "";
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+
+				height: 1px;
+				width: 100%;
+
+				background-color: black;
+				opacity: 0;
+
+				transition: opacity 0.2s;
+
+				pointer-events: none;
+			}
+		}
+
+		&__auth:hover &__login {
+
+			&::after {
+				opacity: 0.25;
+			}
+		}
+
+		&__switch-theme {
+			cursor: pointer;
+		}
+	}
+
+	.nav {
+		&__list {
+			display: flex;
+			justify-content: space-between;
+			height: 20px;
+		}
+
+		&__link {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0 1rem;
+			padding: 5px 15px;
+
+			color: $text-dark-color;
+
+			transition: 0.2s;
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+
+				height: 1px;
+				width: 100%;
+
+				background-color: black;
+				opacity: 0;
+
+				transition: opacity 0.2s;
+
+				pointer-events: none;
+			}
+
+			&:hover,
+			&_active {
+
+				&::after {
+					opacity: 0.25;
+				}
 			}
 		}
 	}
+
+	.bg {
+		width: 100%;
+		height: 50px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.123);
+		position: absolute;
+		top: 50%;
+		z-index: -1;
+		margin-top: -25px;
+		background-color: $header-bg-color;
+	}
+
+
 }
 
-.bg {
-	width: 100%;
-	height: 50px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.123);
-	position: absolute;
-	top: 50%;
-	z-index: -1;
-	margin-top: -25px;
-	background-color: $header-bg-color;
-}
 
-.wrapper {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 1;
-}
-.container--lg {
-	max-width: 85%;
-	margin: 0 auto;
+@media (max-width: $screen-md) {
+	.header {
+		display: none;
+	}
 }

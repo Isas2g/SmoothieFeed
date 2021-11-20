@@ -5,7 +5,6 @@ import MainAchievements from '../components/MainAchievements';
 
 const Achievements = () => {
 	return <div className="container-bg-image-social">
-		<Header/>
 		<MainAchievements/>
 	</div>;
 };
