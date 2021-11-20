@@ -1,3 +1,6 @@
+import django
+from rest_framework.exceptions import ValidationError
+from rest_framework.fields import HiddenField, CurrentUserDefault
 from rest_framework.relations import PrimaryKeyRelatedField
 from rest_framework.serializers import ModelSerializer, IntegerField
 from rest_framework_simplejwt.authentication import JWTTokenUserAuthentication
@@ -60,6 +63,12 @@ class UserSettingsSerializer(ModelSerializer):
         )
 
 
+class SocialMediaSerializer(ModelSerializer):
+    class Meta:
+        model = SocialMedia
+        fields = '__all__'
+
+
 class SocialMediaPublicSerializer(ModelSerializer):
     class Meta:
         model = SocialMediaPublic
@@ -67,17 +76,12 @@ class SocialMediaPublicSerializer(ModelSerializer):
 
 
 class SubscribesSerializer(ModelSerializer, JWTTokenUserAuthentication):
-    public = PrimaryKeyRelatedField(queryset=SocialMediaPublic.objects.all(),
-                                    required=True,
-                                    error_messages={'required': 'поле public обязательное'})
-
     class Meta:
         model = Subscribes
         fields = ('public',)
 
     def create(self, validated_data):
         user_id = self.authenticate(self.context['request'])[0].pk
-        # user_id = 5
         user = User.objects.get(id=user_id)
         sub = Subscribes(
             user=user,

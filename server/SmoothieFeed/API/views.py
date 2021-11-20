@@ -1,13 +1,14 @@
 from rest_framework import mixins, viewsets, status
 from rest_framework.generics import (CreateAPIView,
                                      ListAPIView,
-                                     RetrieveUpdateDestroyAPIView,
+                                     RetrieveUpdateAPIView,
                                      UpdateAPIView,
                                      RetrieveAPIView,
                                      RetrieveUpdateAPIView, ListCreateAPIView, get_object_or_404
                                      )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.viewsets import GenericViewSet
 
 from .models import *
 from .serializers import *
@@ -27,16 +28,20 @@ class UserCreateView(CreateAPIView):
 #     queryset = User.objects.all()
 
 
-class UserSettingsUpdateView(UpdateAPIView, JWTTokenUserAuthentication):
-    permission_classes = [IsAuthenticated]
+class UserSettingsRetrieveUpdateView(RetrieveUpdateAPIView, JWTTokenUserAuthentication):
+    # permission_classes = [IsAuthenticated]
     queryset = UserSettings.objects.all()
     serializer_class = UserSettingsSerializer
     user_id = None
+    lookup_field = 'user_id'
 
     def put(self, request, *args, **kwargs):
-        user, validated_token = self.authenticate(request)
-        self.user_id = user.pk
+        self.user_id = self.authenticate(request)[0].pk
         return self.update(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        self.user_id = self.authenticate(request)[0].pk
+        return self.retrieve(request, *args, **kwargs)
 
     def get_object(self):
         queryset = self.filter_queryset(self.get_queryset())
@@ -44,8 +49,12 @@ class UserSettingsUpdateView(UpdateAPIView, JWTTokenUserAuthentication):
         filter_kwargs = {'user_id': self.user_id}
         obj = get_object_or_404(queryset, **filter_kwargs)
         self.check_object_permissions(self.request, obj)
-
         return obj
+
+
+class SocialMediaView(ListAPIView):
+    serializer_class = SocialMediaSerializer
+    queryset = SocialMedia.objects.all()
 
 
 class SocialMediaPublicCreateView(CreateAPIView):
@@ -73,12 +82,10 @@ class SocialMediaPublicCreateView(CreateAPIView):
         return Response(data, status=status.HTTP_201_CREATED)
 
 
-class SubscribesCreateView(CreateAPIView):
+class SubscribesListCreateView(ListCreateAPIView, JWTTokenUserAuthentication):
     permission_classes = [IsAuthenticated]
-    queryset = User.objects.all()
+    queryset = Subscribes.objects.all()
     serializer_class = SubscribesSerializer
-
-    user_id = None
 
     def create(self, request, *args, **kwargs):
         data = []
@@ -99,8 +106,14 @@ class SubscribesCreateView(CreateAPIView):
             return Response(detail, status=status.HTTP_400_BAD_REQUEST)
         return Response(data, status=status.HTTP_201_CREATED)
 
+    def get(self, request, *args, **kwargs):
+        self.user_id = self.authenticate(request)[0].pk
+        return self.list(request, *args, **kwargs)
+
+    def filter_queryset(self, queryset):
+        return queryset.filter(user_id=self.user_id)
+
 
 class DetoxLevelView(ListAPIView):
     serializer_class = DetoxLevelSerializer
     queryset = DetoxLevel.objects.all()
-

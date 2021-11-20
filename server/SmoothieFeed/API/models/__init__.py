@@ -5,3 +5,4 @@ from .user_settings import UserSettings
 from .user_sources import UserSources
 from .subscribes import Subscribes
 from .detox_level import DetoxLevel
+from .user_use_social_media import UserUseSocialMedia

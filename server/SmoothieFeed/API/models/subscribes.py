@@ -11,6 +11,7 @@ class Subscribes(Model):
         db_table = 'API_subscribes'
         verbose_name = 'Подписка'
         verbose_name_plural = 'Подписки'
+        unique_together = ('user', 'public')
 
 
 
