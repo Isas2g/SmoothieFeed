@@ -9,6 +9,7 @@ import profile from '@assets/images/icon-profile.svg';
 import './Header.scss';
 
 import { routes } from '@configs/routes';
+import BurgerMenu from "@components/Header/components";
 
 const Header = () => {
 	const location = useLocation();
@@ -16,6 +17,7 @@ const Header = () => {
 	return <div className="wrapper">
 			<header className="header">
 				<div className="header__inner container--lg">
+					<BurgerMenu />
 					<Link to={routes.home.index}>
 						<img className="header__logo logo" src={logo} alt="Smoothie Feed" />
 					</Link>

@@ -24,8 +24,8 @@
   }
   
   &__image {
-	width: 90px;
-	height: 90px;
+	min-width: 90px;
+	min-height: 90px;
 	border-radius: 50%;
 	background-color: $review-image;
   }
@@ -36,7 +36,7 @@
 	flex-direction: column;
 	justify-content: center;
   }
-  
+
   &__score {
 	position: absolute;
 	right: 4rem;
