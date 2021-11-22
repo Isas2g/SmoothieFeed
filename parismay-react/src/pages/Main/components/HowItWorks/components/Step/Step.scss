@@ -9,8 +9,8 @@
   }
   
   &__icon {
-    width: 70px;
-    height: 70px;
+    min-width: 70px;
+    min-height: 70px;
     border-radius: 50%;
     
     display: flex;
@@ -27,8 +27,7 @@
   
   &__description {
     padding-left: 1.5rem;
-    height: 60px;
-  
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;

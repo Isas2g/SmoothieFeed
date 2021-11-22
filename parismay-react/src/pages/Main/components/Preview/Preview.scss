@@ -1,6 +1,7 @@
+@import '../../../../styles/breakpoints';
+
 .preview {
-  width: 30%;
-  padding: 250px 0 200px 0;
+  //width: 30%;
 
 
   &__image {
@@ -12,8 +13,8 @@
 	pointer-events: none;
 	
 	&_social {
-	  width: 50%;
-	  top: 34%;
+	  //width: 50%;
+	  //top: 34%;
 	  left: 50%;
 	  
 	  opacity: .14;
@@ -23,4 +24,35 @@
   &__description {
 	margin: 2rem 0 5rem 0;
   }
+}
+
+// min-width
+
+@media (min-width: $screen-lg) {
+	.preview {
+		padding: 250px 0 200px 0;
+	}
+
+}
+
+// max-width
+
+@media (max-width: $screen-lg) {
+	.preview {
+		padding: 150px 0 100px 0;
+	}
+}
+
+@media (max-width: $screen-sm) {
+	.preview {
+		width: 50%;
+
+		&__image {
+			&_social {
+				width: 100%;
+				top: 30%;
+			}
+		}
+	}
+
 }

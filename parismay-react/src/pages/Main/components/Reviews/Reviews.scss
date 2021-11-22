@@ -1,10 +1,27 @@
 @import '../../../../styles/vars';
+@import '../../../../styles/breakpoints';
 
 .reviews {
-  padding: 150px 0;
-  
+
   &__title {
     margin-bottom: 5rem;
     text-align: center;
+  }
+}
+
+// min-width
+
+@media (min-width: $screen-lg) {
+  .reviews {
+    padding: 150px 0;
+
+  }
+}
+
+// max-width
+
+@media (max-width: $screen-lg) {
+  .reviews {
+    padding: 0;
   }
 }

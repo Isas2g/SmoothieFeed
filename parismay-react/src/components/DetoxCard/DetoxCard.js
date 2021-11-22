@@ -27,7 +27,9 @@ const DetoxCard = ({el}) => {
 	return <div className="detox-card" style={{backgroundColor: data.color}}>
 		<div className="detox-card__title">
 			<img src={glass} alt="#"/>
-			{el[0]}
+			<h2 className="detox-card__title-text">
+				{el[0]}
+			</h2>
 			<img src={glass} alt="#"/>
 		</div>
 		<ul className="detox-card__details" ref={details}>

@@ -1,14 +1,10 @@
 $screen-xxs: 0px;
 $screen-xs: 320px;
 $screen-sm: 480px;
-$screen-md: 600px;
-$screen-lg: 801px;
-$screen-xl: 1025px;
-$screen-xxl: 1281px;
+$screen-md: 768px;
+$screen-lg: 1025px;
+$screen-xl: 1281px;
 
-$screen-xs-max: 479px;
-$screen-sm-max: 599px;
-$screen-md-max: 800px;
-$screen-lg-max: 1024px;
-$screen-xl-max: 1280px;
+$screen-lg-min: 769px;
+
 // В будущем они могут поменяться
