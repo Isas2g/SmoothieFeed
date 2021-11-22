@@ -7,13 +7,10 @@ import './List.scss';
 
 const List = ({store}) => {
 	return <div className="list">
-		{store.vkData?.items?.map((el, key) => {
-			const groupID = store.vkData.items[key].source_id * -1;
-			const group = store.vkData.groups.filter(el => el.id === groupID)[0];
-			
-			return <Post key={key} el={el} group={group}/>;
+		{store.news?.map((el, key) => {
+			return <Post key={key} el={el}/>;
 		})}
-		{!store.vkData?.items && <div className="list__no-posts">Для просмотра авторизуйтесь в одной из соцсетей.</div>}
+		{store.news.length > 0 && <div className="list__no-posts">Для просмотра авторизуйтесь в одной из соцсетей.</div>}
 	</div>;
 };
 

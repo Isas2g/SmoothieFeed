@@ -4,15 +4,15 @@ import {
 	observable,
 } from 'mobx';
 
-import {requestVKData} from './requestVKData';
+import {requestVKData} from './requestData';
 
 export default class MainStore {
-	vkData = [];
+	news = [];
 	
 	constructor() {
 		makeObservable(this, {
-			vkData: observable,
-
+			news: observable,
+			
 			fetchVKData: action.bound,
 		});
 	}
@@ -20,7 +20,9 @@ export default class MainStore {
 	async fetchVKData() {
 		const {isError, data} = await requestVKData();
 		
-		this.vkData = data;
+		if (!isError && data) {
+			this.news = this.news.concat(data);
+		}
 	}
 	
 	destroy() {

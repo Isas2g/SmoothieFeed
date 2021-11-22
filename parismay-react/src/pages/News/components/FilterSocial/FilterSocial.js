@@ -32,7 +32,7 @@ const FilterSocial = () => {
 	
 	return <div className="filter-social">
 		<a
-			href={`https://oauth.vk.com/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=73730&response_type=token&v=5.131`}
+			href={`https://oauth.vk.com/authorize?client_id=${CLIENT_ID.VK}&redirect_uri=${REDIRECT_URI}&scope=73730&response_type=token&v=5.131`}
 			rel="noreferrer"
 		>
 			<img
@@ -41,21 +41,33 @@ const FilterSocial = () => {
 				alt="VK"
 			/>
 		</a>
-		<img
-			className={cn('filter-social__item', instStatus === 'true' ? 'filter-social__item_active' : null)}
-			src={instIcon}
-			alt="Instagram"
-		/>
-		<img
-			className={cn('filter-social__item', fbStatus === 'true' ? 'filter-social__item_active' : null)}
-			src={fbIcon}
-			alt="Facebook"
-		/>
-		<img
-			className={cn('filter-social__item', twitterStatus === 'true' ? 'filter-social__item_active' : null)}
-			src={twitterIcon}
-			alt="Twitter"
-		/>
+		<a
+			href={`https://api.instagram.com/oauth/authorize?client_id=${CLIENT_ID.FB}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=user_profile,user_media`}
+			rel='noreferrer'>
+			<img
+				className={cn('filter-social__item', instStatus === 'true' ? 'filter-social__item_active' : null)}
+				src={instIcon}
+				alt="Instagram"
+			/>
+		</a>
+		<a
+			href={`#`}
+			rel='noreferrer'>
+			<img
+				className={cn('filter-social__item', fbStatus === 'true' ? 'filter-social__item_active' : null)}
+				src={fbIcon}
+				alt="Facebook"
+			/>
+		</a>
+		<a
+			href={`#`}
+			rel='noreferrer'>
+			<img
+				className={cn('filter-social__item', twitterStatus === 'true' ? 'filter-social__item_active' : null)}
+				src={twitterIcon}
+				alt="Twitter"
+			/>
+		</a>
 	</div>;
 };
 

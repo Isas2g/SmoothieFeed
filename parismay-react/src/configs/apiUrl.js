@@ -13,6 +13,9 @@ export const apiUrl = {
 	},
 };
 
-export const CLIENT_ID = 8002419;
+export const CLIENT_ID = {
+	VK: 8002419,
+	Inst: 3079303912347538,
+};
 export const DEFAULT_REDIRECT_URI = "https://oauth.vk.com/blank.html";
 export const REDIRECT_URI = "http://localhost:3000/token_page";
