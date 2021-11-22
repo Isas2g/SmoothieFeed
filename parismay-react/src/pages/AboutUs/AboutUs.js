@@ -15,7 +15,7 @@ const AboutUs = () => {
 	
 	return <div className="about-us" ref={page}>
 		<img className="about-us__image" src={social} alt="#"/>
-		<div className="about-us__title title">О приложении</div>
+		<h1 className="about-us__title title">О приложении</h1>
 		<p className="about-us__description description">
 			«SmoothieFeed» - приложение для digital-детокса, в нем собраны ленты всех социальных сетей
 			пользователя и он может ограничивать время или количество самых интересных постов в день из
@@ -23,7 +23,7 @@ const AboutUs = () => {
 			уже существующую в приложении программу digital-детокса или выбрать свою.
 		</p>
 		<div className="about-us__leave-review leave-review">
-			<div className="leave-review__title">Понравилось приложение?<br/>Оставь отзыв!</div>
+			<h1 className="leave-review__title title">Понравилось приложение?<br/>Оставь отзыв!</h1>
 			<div className="leave-review__button action-button">Оставить отзыв</div>
 		</div>
 	</div>;

@@ -1,7 +1,7 @@
 @import '../../../../styles/breakpoints';
 
 .preview {
-  //width: 30%;
+
 
 
   &__image {
@@ -13,8 +13,8 @@
 	pointer-events: none;
 	
 	&_social {
-	  //width: 50%;
-	  //top: 34%;
+	  width: 50%;
+	  top: 34%;
 	  left: 50%;
 	  
 	  opacity: .14;
@@ -35,6 +35,13 @@
 
 }
 
+@media (min-width: $screen-md) {
+	.preview {
+		width: 40%;
+	}
+
+}
+
 // max-width
 
 @media (max-width: $screen-lg) {
@@ -43,9 +50,14 @@
 	}
 }
 
-@media (max-width: $screen-sm) {
+@media (max-width: $screen-md) {
 	.preview {
 		width: 50%;
+	}
+}
+
+@media (max-width: $screen-sm) {
+	.preview {
 
 		&__image {
 			&_social {

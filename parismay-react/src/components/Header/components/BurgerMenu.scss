@@ -73,8 +73,18 @@
   }
 }
 
-@media (min-width: $screen-lg-min) {
+// min-width
+
+@media (min-width: $screen-md) {
   .burger-menu {
     display: none;
+  }
+}
+
+// max-width
+
+@media (max-width: $screen-sm) {
+  .burger-menu {
+    min-width: 100vw;
   }
 }

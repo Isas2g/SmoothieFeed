@@ -23,8 +23,8 @@ const Header = () => {
 				<div className="header__inner container--lg">
 					<Burger active={menuActive} setActive={setMenuActive} />
 					<BurgerMenu active={menuActive} setActive={setMenuActive} />
-					<Link class="header__mobile-logo mobile-logo">
-						<span className="mobile-logo--darkgreen">S</span>moothie<span className="mobile-logo-darkgreen">F</span>eed
+					<Link to={routes.home.index} class="header__mobile-logo mobile-logo">
+						<span className="mobile-logo--darkgreen">S</span>moothie<span className="mobile-logo--darkgreen">F</span>eed
 					</Link>
 					<Link to={routes.home.index} className="header__logo-link">
 						<img className="header__logo logo" src={logo} alt="Smoothie Feed" />

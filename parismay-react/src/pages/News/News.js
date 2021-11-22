@@ -23,7 +23,7 @@ const News = ({store}) => {
 	
 	return <div className="news" ref={page}>
 		<img className="news__image" src={social} alt="#"/>
-		<div className="news__content">
+		<div className="news__content container">
 			<div className="news__inner">
 				<FilterSocial/>
 				<List store={store}/>

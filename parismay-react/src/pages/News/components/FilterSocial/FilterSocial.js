@@ -31,10 +31,7 @@ const FilterSocial = () => {
 	}, []);
 	
 	return <div className="filter-social">
-		<a
-			href={`https://oauth.vk.com/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=73730&response_type=token&v=5.131`}
-			rel="noreferrer"
-		>
+		<a href={`https://oauth.vk.com/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=73730&response_type=token&v=5.131`} rel="noreferrer">
 			<img
 				className={cn('filter-social__item', vkStatus === 'true' ? 'filter-social__item_active' : null)}
 				src={vkIcon}

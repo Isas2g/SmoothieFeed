@@ -1,28 +1,26 @@
 .filter-social {
-  margin-right: 50px;
-  
-  display: grid;
-  grid-template-columns: 80px 80px;
-  grid-template-rows: 80px 80px;
-  
-  &__item {
-	width: 60px;
-	height: 60px;
-	
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-	border-radius: 1rem;
- 
-	opacity: .2;
-	
-	cursor: pointer;
-	
-	transition: opacity .2s;
-	
-	&_active {
-	  opacity: 1;
+	display: grid;
+	grid-template-columns: 80px 80px;
+	grid-template-rows: 80px 80px;
+
+	&__item {
+		width: 60px;
+		height: 60px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		border-radius: 1rem;
+
+		opacity: .2;
+
+		cursor: pointer;
+
+		transition: opacity .2s;
+
+		&_active {
+		  opacity: 1;
+		}
 	}
-  }
 }

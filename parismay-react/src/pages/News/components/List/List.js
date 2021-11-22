@@ -13,7 +13,7 @@ const List = ({store}) => {
 			
 			return <Post key={key} el={el} group={group}/>;
 		})}
-		{!store.vkData?.items && <div className="list__no-posts">Для просмотра авторизуйтесь в одной из соцсетей.</div>}
+		{!store.vkData?.items && <h2 className="list__no-posts">Для просмотра авторизуйтесь в одной из соцсетей.</h2>}
 	</div>;
 };
 
