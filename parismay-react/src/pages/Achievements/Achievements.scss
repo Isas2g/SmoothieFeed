@@ -1,6 +1,8 @@
 @import "../../styles/breakpoints";
 @import "../../styles/vars";
-.main {
+
+// Добавил этот класс, потому что не понимаю, как сделать плавную подгрузку (по факту его нужно убрать)
+.main__achievements {
   opacity: 1;
   filter: none;
 }

@@ -2,14 +2,11 @@
 @import "../../styles/vars";
 
 .achievements {
-  margin: 15rem 0 0 0;
+  margin: 12rem 0 0 0;
   &__list {
-    //display: flex;
-    //flex-wrap: wrap;
+    margin: 3rem 0 0 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-gap: 2rem;
   }
   &__title {
     text-align: center;
@@ -24,12 +21,14 @@
 
   &__icon {
     background-color: $achievement-bg;
-    width: 100px;
-    height: 100px;
+
     display: flex;
     justify-content: center;
     align-items: flex-end;
     border-radius: 50%;
+
+    width: 100px;
+    height: 100px;
 
     svg {
       margin-bottom: 5px;
@@ -53,5 +52,38 @@
   &__title {
     text-align: center;
     margin-top: 1rem;
+  }
+}
+
+// min-width
+
+@media (min-width: $screen-md) {
+  .achievements {
+    &__list {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 2rem;
+    }
+  }
+}
+
+// max-width
+
+@media (max-width: $screen-md) {
+  .achievements {
+    &__list {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      grid-gap: 2rem;
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .achievements {
+    &__list {
+      grid-template-columns: 1fr 1fr;
+
+      grid-gap: 1rem;
+    }
   }
 }
