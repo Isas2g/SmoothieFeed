@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import './AchievementsList.scss';
 
+// TODO: Заменить svg на img
+
 const AchievementsList = () => {
 	return <div className="achievements__list">
 		<div className="achievements__achievement achievement">
