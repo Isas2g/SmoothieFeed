@@ -13,7 +13,7 @@ const AboutUs = () => {
 		return () => clearTimeout(timeout);
 	}, []);
 	
-	return <div className="about-us" ref={page}>
+	return <div className="about-us container" ref={page}>
 		<img className="about-us__image" src={social} alt="#"/>
 		<h1 className="about-us__title title">О приложении</h1>
 		<p className="about-us__description description">

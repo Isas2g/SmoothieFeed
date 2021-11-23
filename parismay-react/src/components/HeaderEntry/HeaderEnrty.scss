@@ -1,0 +1,63 @@
+@import "../../styles/vars";
+@import "../../styles/breakpoints";
+
+.header-entry {
+  padding: 1.5rem 0 0 0;
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  &__title {
+      padding-left: 1rem;
+      font-weight: 700;
+      color: $entry-header-text;
+    }
+}
+
+.logo {
+  max-width: 100%;
+
+  &--dark-green {
+    color: $mobile-logo-dark-color;
+  }
+}
+
+// min-width
+
+@media (min-width: $screen-md) {
+  .header-entry {
+    &__title {
+      font-size: 4rem;
+    }
+  }
+  .logo {
+    height: 100px;
+  }
+}
+
+// max-width
+
+@media (max-width: $screen-md) {
+  .header-entry {
+    &__title {
+      font-size: 3rem;
+    }
+  }
+  .logo {
+    height: 80px;
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .header-entry {
+    &__title {
+      font-size: 2.5rem;
+    }
+  }
+  .logo {
+    height: 60px;
+  }
+}

@@ -1,7 +1,9 @@
 import React            from 'react';
-import AchievementsList from './AchievementsList/AchievementsList';
+import AchievementsList from "@components/AchievementsList/AchievementsList";
 
-const MainAchievements = () => {
+import "./Achievements.scss";
+
+const Achievements = () => {
 	return <main className="main">
 		<div className="container">
 			<div className="main__achievements achievements">
@@ -12,4 +14,4 @@ const MainAchievements = () => {
 	</main>;
 };
 
-export default MainAchievements;
+export default React.memo(Achievements);

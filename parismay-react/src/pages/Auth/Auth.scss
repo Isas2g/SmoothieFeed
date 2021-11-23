@@ -1,0 +1,90 @@
+@import "../../styles/vars";
+@import "../../styles/breakpoints";
+
+.entry {
+  background-color: $entry-form-bg;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.157);
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+  }
+}
+
+.main-entry {
+
+  &__image {
+    width: 50%;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    opacity: .14;
+
+  }
+}
+
+.social {
+  margin-top: 1.5rem;
+  &__title {
+    text-align: center;
+  }
+  &__icons {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem auto 0 auto;
+  }
+  &__icon {
+    width: 100%;
+    height: 60px;
+
+
+  }
+  &__link {
+    &:not(:first-of-type) {
+      margin: 0 0 0 1rem;
+    }
+  }
+  &__icon:not(:first-of-type) {
+    margin-left: 1rem;
+  }
+}
+
+//min-width
+
+@media (min-width: $screen-md) {
+  .entry {
+    max-width: 55%;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .main-entry {
+    padding: 5rem 0;
+  }
+}
+
+// max-width
+
+@media (max-width: $screen-md) {
+  .entry {
+    max-width: 80%;
+  }
+
+}
+
+@media (max-width: $screen-sm) {
+  .entry {
+    max-width: 100%;
+  }
+  .main-entry {
+    padding: 3rem 0;
+  }
+}

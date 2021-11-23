@@ -12,7 +12,7 @@ import Main         from '@pages/Main/Main';
 import News         from '@pages/News/News';
 import Auth         from '@pages/Auth/Auth';
 import Programs     from '@pages/Programs';
-import Achievements from '@pages/Achievements';
+import Achievements from '@pages/Achievements/Achievements';
 import AboutUs      from '@pages/AboutUs/AboutUs';
 import TokenPage    from '@pages/TokenPage';
 
@@ -21,6 +21,7 @@ import Header from '@components/Header';
 import {routes} from '@configs/routes';
 
 import MainStore from '@store/MainStore';
+import HeaderEntry from "@components/HeaderEntry";
 
 const App = () => {
 	const mainStore = useLocalStore(() => new MainStore());
@@ -96,6 +97,7 @@ const App = () => {
 				<News store={mainStore}/>
 			</Route>
 			<Route exact path={routes.auth.index}>
+				<HeaderEntry />
 				<Auth/>
 			</Route>
 			<Route exact path={routes.programs.index}>

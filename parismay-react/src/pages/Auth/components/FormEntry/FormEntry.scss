@@ -1,0 +1,103 @@
+@import "../../../../styles/vars";
+@import "../../../../styles/breakpoints";
+
+.entry-form {
+  display: flex;
+  flex-direction: column;
+
+
+  &__input-text {
+    background-color: $entry-form-input;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 3px 5px rgba(27, 27, 27, 0.089);
+    border: none;
+
+
+    &:focus {
+      outline: 1px solid $entry-input-focus;
+    }
+  }
+  &__input-text:not(:first-of-type) {
+    margin-top: 2rem;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+  }
+  &__input-checkbox {
+    background-color: $entry-form-input;
+    margin: 0 0.3rem 0 0;
+  }
+  &__input-text::placeholder {
+    color: #000;
+    opacity: 30%;
+  }
+  &__remember {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  &__forget-password {
+    text-decoration: underline;
+    color: $text-dark-color;
+    font-weight: 300;
+  }
+  &__sign-in {
+    text-decoration: underline;
+    color: $text-dark-color;
+    padding: 0 0 0 0.3rem;
+  }
+  &__login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 1rem;
+
+    .sign-up-button {
+      padding: 1rem 3rem;
+      border-radius: 2rem;
+      color: $entry-submit-button-text;
+      background-color: $entry-submit-button-bg;
+      cursor: pointer;
+      border: none;
+    }
+  }
+  &__registration {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 300;
+    padding: 0 0 0 0.5rem;
+    white-space: nowrap;
+    flex-wrap: wrap;
+  }
+}
+
+
+// min-width
+
+@media (min-width: $screen-sm) {
+  .entry-form {
+    margin: 2rem auto 1.5rem auto;
+    max-width: 80%;
+      .sign-up-button {
+        width: 40%;
+      }
+  }
+}
+
+// max-width
+
+@media (max-width: $screen-sm) {
+  .entry-form {
+    margin: 1rem 0;
+    max-width: 100%;
+
+    .sign-up-button {
+      width: 50%;
+    }
+  }
+}

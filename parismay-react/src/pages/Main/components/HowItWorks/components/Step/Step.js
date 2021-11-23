@@ -8,8 +8,8 @@ const Step = ({id, el}) => {
 			<img src={el.image} alt='#'/>
 		</div>
 		<div className="step__description">
-			<div className="step__title">{`${id}. ${el.title}`}</div>
-			<div className="step__subtitle">{el.description}</div>
+			<h4 className="step__title">{`${id}. ${el.title}`}</h4>
+			<h5 className="step__subtitle">{el.description}</h5>
 		</div>
 	</div>;
 };

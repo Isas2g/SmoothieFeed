@@ -4,7 +4,7 @@ import cn         from 'classnames';
 import vkIcon      from '@assets/images/social-vk.svg';
 import instIcon    from '@assets/images/social-instagram.svg';
 import fbIcon      from '@assets/images/social-facebook.svg';
-import twitterIcon from '@assets/images/social-twitter-2.svg';
+import twitterIcon from '@assets/images/social-twitter.svg';
 
 import {CLIENT_ID, DEFAULT_REDIRECT_URI, REDIRECT_URI} from '@configs/apiUrl';
 

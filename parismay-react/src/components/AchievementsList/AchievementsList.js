@@ -337,4 +337,4 @@ const AchievementsList = () => {
 	</div>;
 };
 
-export default AchievementsList;
+export default React.memo(AchievementsList);

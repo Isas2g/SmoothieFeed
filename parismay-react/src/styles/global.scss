@@ -132,11 +132,6 @@ body {
   cursor: pointer;
 }
 
-//.title {
-//  font-family: "Montserrat Bold", sans-serif;
-//  font-size: 4rem;
-//}
-
 .description {
   font-family: "Montserrat Medium", sans-serif;
   font-size: 2rem;
@@ -302,5 +297,34 @@ h6 {
   }
   .container-bg-image-banana {
     background: url("../assets/images/bg-banana.png") 125% 5% / auto 15% no-repeat;
+  }
+
+  h1 {
+    font-family: "Montserrat Bold", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-family: "Montserrat Bold", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 1.7rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  h5 {
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  .description {
+    font-family: "Montserrat Medium", sans-serif;
+    font-size: 1.5rem;
   }
 }
