@@ -8,7 +8,7 @@ admin.site.unregister(User)
 @admin.register(User)
 class UserAdmin(ModelAdmin):
     list_display = ('id', 'username', 'email', 'last_login')
-    # search_fields = ('email',)
+    # search_fields = ('username',)
 
     def save_model(self, request, obj, form, change):
         obj.set_password(obj.password)
