@@ -52,6 +52,28 @@ class UserSettingsRetrieveUpdateView(RetrieveUpdateAPIView, JWTTokenUserAuthenti
         return obj
 
 
+class UserUseSocialMediaView(ListCreateAPIView, JWTTokenUserAuthentication):
+    permission_classes = [IsAuthenticated]
+    serializer_class = UserUseSocialMediaSerializer
+    queryset = UserUseSocialMedia.objects.all()
+    user_id = None
+    lookup_field = 'user_id'
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def get(self, request, *args, **kwargs):
+        self.user_id = self.authenticate(request)[0].pk
+        return self.list(request, *args, **kwargs)
+
+    def filter_queryset(self, queryset):
+        return queryset.filter(user_id=self.user_id)
+
+
 class SocialMediaView(ListAPIView):
     serializer_class = SocialMediaSerializer
     queryset = SocialMedia.objects.all()
@@ -74,17 +96,15 @@ class SocialMediaPublicCreateView(CreateAPIView):
                 errors[j] = list(set(errors.get(j, []) + serializer.errors[j]))
                 error_flag = True
             if not error_flag:
-                serializer.save()
+                try:
+                    serializer.save()
+                except Exception as e:
+                    pass
                 data.append(i)
         if errors:
             detail = {**errors, **{'save': data}}
             return Response(detail, status=status.HTTP_400_BAD_REQUEST)
         return Response(data, status=status.HTTP_201_CREATED)
-        # serializer = self.get_serializer(data=request.data, many=True)
-        # serializer.is_valid(raise_exception=True)
-        # self.perform_create(serializer)
-        # headers = self.get_success_headers(serializer.data)
-        # return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
 class SubscribesListCreateView(ListCreateAPIView, JWTTokenUserAuthentication):
@@ -104,8 +124,11 @@ class SubscribesListCreateView(ListCreateAPIView, JWTTokenUserAuthentication):
                 errors[j] = list(set(errors.get(j, []) + serializer.errors[j]))
                 error_flag = True
             if not error_flag:
-                serializer.save()
-                data.append(i)
+                try:
+                    serializer.save()
+                except Exception as e:
+                    pass
+                    data.append(i)
         if errors:
             detail = {**errors, **{'save': data}}
             return Response(detail, status=status.HTTP_400_BAD_REQUEST)
