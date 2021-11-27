@@ -62,7 +62,7 @@
 
 // min-width
 
-@media (min-width: $screen-lg) {
+@media (min-width: $screen-lg + 1) {
 	.detox-card {
 		min-width: 230px;
 
@@ -73,7 +73,7 @@
 
 }
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-md + 1) {
 	.detox-card {
 		min-width: 200px;
 

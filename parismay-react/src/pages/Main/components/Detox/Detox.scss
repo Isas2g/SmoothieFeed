@@ -15,13 +15,13 @@
 
 // min-width
 
-@media (min-width: $screen-lg) {
+@media (min-width: $screen-lg + 1) {
 	.detox-program {
 		padding: 100px 0;
 	}
 }
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-md + 1) {
 	.detox-program {
 		height: 700px;
 		&__cards {

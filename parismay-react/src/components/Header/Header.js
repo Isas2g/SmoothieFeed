@@ -60,8 +60,8 @@ const Header = () => {
 						</div>
 					</Link>
 					<img className="header__switch-theme" src={theme} alt="Switch Theme" />
+
 				</div>
-				<div className="bg"/>
 			</header>
 		</div>
 };

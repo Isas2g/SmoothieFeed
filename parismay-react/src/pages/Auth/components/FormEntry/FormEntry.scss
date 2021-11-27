@@ -79,7 +79,7 @@
 
 // min-width
 
-@media (min-width: $screen-sm) {
+@media (min-width: $screen-sm + 1) {
   .entry-form {
     margin: 2rem auto 1.5rem auto;
     max-width: 80%;

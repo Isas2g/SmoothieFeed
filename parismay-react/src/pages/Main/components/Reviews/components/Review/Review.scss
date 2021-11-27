@@ -70,13 +70,13 @@
 
 // min-width
 
-@media (min-width: $screen-lg) {
+@media (min-width: $screen-lg + 1) {
   .review {
     width: 70%;
   }
 }
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-md + 1) {
   .review {
     &__star {
       width: 30px;

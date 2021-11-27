@@ -80,6 +80,7 @@ const BurgerMenu = ({active, setActive}) => {
                 </nav>
 				<hr className="burger-menu__hr-line hr-line"/>
 				<img className="burger-menu__switch-theme" src={switchTheme} alt="Theme"/>
+				<Link className="burger-menu__exit exit"><h4>Выйти</h4></Link>
             </div>
         </div>
     );

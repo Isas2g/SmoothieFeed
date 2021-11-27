@@ -59,19 +59,25 @@
 
 //min-width
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-lg + 1) {
   .entry {
-    max-width: 55%;
+    max-width: 65%;
   }
 }
 
-@media (min-width: $screen-sm) {
+@media (min-width: $screen-sm + 1) {
   .main-entry {
     padding: 5rem 0;
   }
 }
 
 // max-width
+
+@media (max-width: $screen-lg) {
+  .entry {
+    max-width: 70%;
+  }
+}
 
 @media (max-width: $screen-md) {
   .entry {

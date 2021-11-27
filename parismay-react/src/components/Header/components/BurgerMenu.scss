@@ -41,6 +41,12 @@
     right: 20px;
     top: 20px;
   }
+  &__exit {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    color: $text-dark-color;
+  }
 }
 
 .active {
@@ -75,7 +81,7 @@
 
 // min-width
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-md + 1) {
   .burger-menu {
     display: none;
   }

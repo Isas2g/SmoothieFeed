@@ -11,7 +11,7 @@
 
 // min-width
 
-@media (min-width: $screen-lg) {
+@media (min-width: $screen-lg + 1) {
   .reviews {
     padding: 150px 0;
 
@@ -22,6 +22,6 @@
 
 @media (max-width: $screen-lg) {
   .reviews {
-    padding: 0;
+    padding: 0 0 50px 0;
   }
 }

@@ -28,14 +28,14 @@
 
 // min-width
 
-@media (min-width: $screen-lg) {
+@media (min-width: $screen-lg + 1) {
 	.preview {
 		padding: 250px 0 200px 0;
 	}
 
 }
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-md + 1) {
 	.preview {
 		width: 40%;
 	}

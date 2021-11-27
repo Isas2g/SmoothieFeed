@@ -59,7 +59,7 @@
 
 // min-width
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-md + 1) {
   .achievements {
     &__list {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

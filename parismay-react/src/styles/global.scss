@@ -220,7 +220,7 @@ h6 {
 
 // min-width
 
-@media (min-width: $screen-lg) {
+@media (min-width: $screen-lg + 1) {
   .container {
     max-width: 70%;
   }
@@ -236,7 +236,7 @@ h6 {
   }
 }
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-md + 1) {
   .container-bg-image-strawberry {
     background: url("../assets/images/bg-strawberry.png") 100% 100% / auto 40% no-repeat;
   }

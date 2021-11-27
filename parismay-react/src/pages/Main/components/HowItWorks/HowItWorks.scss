@@ -38,14 +38,14 @@
 
 // min-width
 
-@media (min-width: $screen-lg) {
+@media (min-width: $screen-lg + 1) {
 	.how-it-works {
 		padding: 100px 0;
 
 	}
 }
 
-@media (min-width: $screen-sm) {
+@media (min-width: $screen-sm + 1) {
 	.how-it-works {
 		&__title {
 			margin-bottom: 7rem;

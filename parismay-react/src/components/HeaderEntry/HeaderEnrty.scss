@@ -27,15 +27,16 @@
 
 // min-width
 
-@media (min-width: $screen-md) {
+@media (min-width: $screen-md + 1) {
   .header-entry {
     &__title {
       font-size: 4rem;
     }
+    &__logo {
+      height: 100px;
+    }
   }
-  .logo {
-    height: 100px;
-  }
+
 }
 
 // max-width
@@ -45,10 +46,11 @@
     &__title {
       font-size: 3rem;
     }
+    &__logo {
+      height: 80px;
+    }
   }
-  .logo {
-    height: 80px;
-  }
+
 }
 
 @media (max-width: $screen-sm) {
@@ -56,8 +58,9 @@
     &__title {
       font-size: 2.5rem;
     }
+    &__logo {
+      height: 60px;
+    }
   }
-  .logo {
-    height: 60px;
-  }
+
 }
