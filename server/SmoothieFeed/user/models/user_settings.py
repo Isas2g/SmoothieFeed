@@ -1,5 +1,4 @@
 from datetime import timedelta
-
 from django.contrib.auth.models import User
 from django.db.models import Model, ForeignKey, IntegerField, DurationField, CASCADE
 
@@ -10,6 +9,6 @@ class UserSettings(Model):
     detox_limit_time = DurationField(default=timedelta(minutes=0))
 
     class Meta:
-        db_table = 'API_user_settings'
+        db_table = 'user_settings'
         verbose_name = 'Пользовательская настройка'
         verbose_name_plural = 'Пользовательские настройки'

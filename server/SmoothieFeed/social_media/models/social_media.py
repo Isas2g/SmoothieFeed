@@ -9,7 +9,7 @@ class SocialMedia(Model):
     )
 
     class Meta:
-        db_table = 'API_social_media'
+        db_table = 'social_media'
         verbose_name = 'Социальна сеть'
         verbose_name_plural = 'Социальные сети'
 

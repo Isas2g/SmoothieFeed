@@ -1,4 +1,4 @@
-from django.db.models import Model, ForeignKey, CharField, CASCADE, IntegerField
+from django.db.models import Model, ForeignKey, CASCADE, IntegerField
 from .social_media import SocialMedia
 
 
@@ -7,7 +7,7 @@ class SocialMediaPublic(Model):
     public_id = IntegerField()
 
     class Meta:
-        db_table = 'API_social_media_public'
+        db_table = 'social_media_public'
         verbose_name = 'Паблик из социальной сети'
         verbose_name_plural = 'Паблики из социальной сети'
         unique_together = ('media', 'public_id')

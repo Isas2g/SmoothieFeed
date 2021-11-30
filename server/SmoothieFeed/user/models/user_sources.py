@@ -1,5 +1,4 @@
 from datetime import timedelta
-
 from django.contrib.auth.models import User
 from django.db.models import Model, ForeignKey, IntegerField, DateTimeField, DurationField, CASCADE
 
@@ -11,6 +10,6 @@ class UserSources(Model):
     total_seen_time = DurationField(default=timedelta(minutes=0))
 
     class Meta:
-        db_table = 'API_user_sources'
+        db_table = 'user_sources'
         verbose_name = 'Пользовательские ресурсы'
         verbose_name_plural = 'Пользовательские ресурсы'
