@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <TextView
+        android:id="@+id/tv_light_detox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:text="Light"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/frag_dialogue_rb_posts_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50 Posts"
+        android:textColor="@color/non_active_view_color_grey"
+        app:layout_constraintEnd_toStartOf="@+id/frag_dialogue_rb_time_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_light_detox" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/frag_dialogue_rb_time_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 Hours"
+        android:textColor="@color/non_active_view_color_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frag_dialogue_rb_posts_light"
+        app:layout_constraintTop_toBottomOf="@id/tv_light_detox" />
+
+    <TextView
+        android:id="@+id/tv_medium_detox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:text="Medium"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frag_dialogue_rb_posts_light" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/frag_dialogue_rb_posts_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30 Posts"
+        android:textColor="@color/non_active_view_color_grey"
+        app:layout_constraintEnd_toStartOf="@+id/frag_dialogue_rb_time_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_medium_detox" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/frag_dialogue_rb_time_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 Hours"
+        android:textColor="@color/non_active_view_color_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frag_dialogue_rb_posts_light"
+        app:layout_constraintTop_toBottomOf="@id/tv_medium_detox" />
+
+    <TextView
+        android:id="@+id/tv_hard_detox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:text="Hard"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frag_dialogue_rb_posts_medium" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/frag_dialogue_rb_posts_hard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10 Posts"
+        android:textColor="@color/non_active_view_color_grey"
+        app:layout_constraintEnd_toStartOf="@+id/frag_dialogue_rb_time_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_hard_detox" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/frag_dialogue_rb_time_hard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30 Minutes"
+        android:textColor="@color/non_active_view_color_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frag_dialogue_rb_posts_light"
+        app:layout_constraintTop_toBottomOf="@id/tv_hard_detox" />
+
+    <Button
+        android:id="@+id/bv_start_detox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:text="start detox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frag_dialogue_rb_posts_hard" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

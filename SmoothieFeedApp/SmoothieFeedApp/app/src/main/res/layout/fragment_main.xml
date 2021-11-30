@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <TextView
+        android:id="@+id/main_frag_tv_detox_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/main_frag_tv_counter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Remaining posts:" />
+
+    <TextView
+        android:id="@+id/main_frag_tv_dont_authorize_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="You don't have authorized accounts in social networks, please press Manage accounts button."
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_frag_tv_detox_title" />
+
+    <TextView
+        android:id="@+id/main_frag_tv_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/main_frag_tv_detox_title"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="50" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_frag_rv_posts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/main_frag_bv_manage_accounts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_frag_tv_detox_title"/>
+
+    <Button
+        android:id="@+id/main_frag_bv_manage_accounts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:text="manage accounts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_frag_rv_posts" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

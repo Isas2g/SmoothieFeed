@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.smoothiefeedapp.presentation.fragments.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:enterAnim="@anim/nav_default_enter_anim"/>
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/loginFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.smoothiefeedapp.presentation.fragments.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration"/>
+
+    <fragment
+        android:id="@+id/userAccountsFragment"
+        android:name="com.example.smoothiefeedapp.presentation.fragments.user_accounts_fragment.UserAccountsFragment"
+        android:label="AuthorizationFragment"
+        tools:layout="@layout/fragment_user_accounts">
+        <action
+            android:id="@+id/action_userAccountsFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment" />
+        <action
+            android:id="@+id/action_userAccountsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.example.smoothiefeedapp.presentation.fragments.AuthorizationFragment"
+        android:label="AuthorizationFragment"
+        tools:layout="@layout/fragment_authorization">
+        <action
+            android:id="@+id/action_authorizationFragment_to_userAccountsFragment"
+            app:destination="@id/userAccountsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.smoothiefeedapp.presentation.fragments.main_fragment.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_userAccountsFragment"
+            app:destination="@id/userAccountsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chooseDetoxDialogue"
+            app:destination="@id/chooseDetoxDialogue" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseDetoxDialogue"
+        android:name="com.example.smoothiefeedapp.presentation.fragments.ChooseDetoxDialogue"
+        android:label="ChooseDetoxDialogue"
+        tools:layout="@layout/fragment_dialogue">
+        <action
+            android:id="@+id/action_chooseDetoxDialogue_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SmoothieFeed App</string>
+    <string name="email_hint_text_input_layout">Email</string>
+    <string name="password_hint_text_input_layout">Password</string>
+    <string name="button_text_log_in">log in</string>
+    <string name="login_fragment_text_forgot_your_password">Forgot your password?</string>
+    <string name="login_fragment_text_don_t_you_have_an_account">Don\'t you have an account?</string>
+    <string name="registration_hint_first_name">First name</string>
+    <string name="registration_hint_second_name">Second name</string>
+    <string name="registration_hint_username">Username</string>
+    <string name="registration_hint_email">Email</string>
+    <string name="registration_hint_password">Password</string>
+    <string name="registration_hint_repeat_your_password">Repeat password</string>
+    <string name="registration_bv_text_join">join</string>
+    <string name="first_name_error">Please enter your first name</string>
+    <string name="second_name_error">Please enter your second name</string>
+    <string name="username_error">Please enter your username</string>
+    <string name="first_password_error">Please enter password</string>
+    <string name="second_password_error">Please repeat password</string>
+    <string name="email_error">Please enter correct email</string>
+    <string name="passwords_error">Passwords don\'t same</string>
+    <string name="log_in_fragment_password_error">Please enter correct password</string>
+    <integer name="com_vk_sdk_AppId">7988410</integer>
+</resources>
