@@ -43,6 +43,7 @@ class UserUseSocialMediaSerializer(ModelSerializer, JWTTokenUserAuthentication):
         model = UserUseSocialMedia
         fields = (
             'media',
+            'token'
         )
 
     def create(self, validated_data):
@@ -50,7 +51,8 @@ class UserUseSocialMediaSerializer(ModelSerializer, JWTTokenUserAuthentication):
         user = User.objects.get(id=user_id)
         use = UserUseSocialMedia(
             user=user,
-            media=validated_data['media']
+            media=validated_data['media'],
+            token=validated_data['token'],
         )
         use.save()
         return use
