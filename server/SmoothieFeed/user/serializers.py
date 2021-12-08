@@ -1,8 +1,9 @@
-from rest_framework.serializers import ModelSerializer
+from django.db import IntegrityError
+from rest_framework.serializers import ModelSerializer, raise_errors_on_nested_writes
 from rest_framework_simplejwt.authentication import JWTTokenUserAuthentication
 
 from .models import *
-from social_media.serializers import SocialMediaSerializer
+from  social_media.serializers import SocialMediaSerializer
 
 
 class UserCreateSerializer(ModelSerializer):
@@ -66,9 +67,8 @@ class SubscribesSerializer(ModelSerializer, JWTTokenUserAuthentication):
     def create(self, validated_data):
         user_id = self.authenticate(self.context['request'])[0].pk
         user = User.objects.get(id=user_id)
-        sub = Subscribes(
-            user=user,
-            public=validated_data['public']
-        )
-        sub.save()
+        validated_data["user"] = user
+
+        sub = super().create(validated_data)
+
         return sub

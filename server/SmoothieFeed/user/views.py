@@ -63,26 +63,11 @@ class SubscribesListCreateView(ListCreateAPIView, JWTTokenUserAuthentication):
     serializer_class = SubscribesSerializer
 
     def create(self, request, *args, **kwargs):
-        data = []
-        errors = {}
-        request_data = request.data if isinstance(request.data, list) else [request.data]
-        for i in request_data:
-            serializer = self.get_serializer(data=i)
-            serializer.is_valid()
-            error_flag = False
-            for j in serializer.errors:
-                errors[j] = list(set(errors.get(j, []) + serializer.errors[j]))
-                error_flag = True
-            if not error_flag:
-                try:
-                    serializer.save()
-                except Exception as e:
-                    pass
-                    data.append(i)
-        if errors:
-            detail = {**errors, **{'save': data}}
-            return Response(detail, status=status.HTTP_400_BAD_REQUEST)
-        return Response(data, status=status.HTTP_201_CREATED)
+        serializer = self.get_serializer(data=request.data, many=True)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
     def get(self, request, *args, **kwargs):
         self.user_id = self.authenticate(request)[0].pk

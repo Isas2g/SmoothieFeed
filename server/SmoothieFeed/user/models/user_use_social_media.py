@@ -6,7 +6,7 @@ from social_media.models import SocialMedia
 class UserUseSocialMedia(Model):
     user = ForeignKey(User, on_delete=CASCADE)
     media = ForeignKey(SocialMedia, on_delete=CASCADE)
-    token = CharField(max_length=100, unique=True)
+    token = CharField(max_length=200, unique=True)
 
     class Meta:
         db_table = 'user_use_social_media'
