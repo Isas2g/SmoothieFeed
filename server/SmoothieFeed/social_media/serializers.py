@@ -9,6 +9,8 @@ class SocialMediaSerializer(ModelSerializer):
 
 
 class SocialMediaPublicSerializer(ModelSerializer):
+    media = SocialMediaSerializer()
+
     class Meta:
         model = SocialMediaPublic
         fields = ('media', 'public_id')

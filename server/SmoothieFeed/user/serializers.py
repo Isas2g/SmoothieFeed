@@ -54,7 +54,7 @@ class UserSettingsSerializer(ModelSerializer):
 
 
 class UserUseSocialMediaSerializer(ModelSerializer, JWTTokenUserAuthentication):
-    media = SocialMediaSerializer
+    media = SocialMediaSerializer()
 
     class Meta:
         model = UserUseSocialMedia
@@ -76,6 +76,7 @@ class UserUseSocialMediaSerializer(ModelSerializer, JWTTokenUserAuthentication):
 
 
 class SubscribesSerializer(ModelSerializer, JWTTokenUserAuthentication):
+
     class Meta:
         model = Subscribes
         fields = ('public',)
