@@ -3,7 +3,13 @@ from rest_framework.serializers import ModelSerializer, raise_errors_on_nested_w
 from rest_framework_simplejwt.authentication import JWTTokenUserAuthentication
 
 from .models import *
-from  social_media.serializers import SocialMediaSerializer
+from social_media.serializers import SocialMediaSerializer
+
+
+class UserRetrieveSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'email', 'username')
 
 
 class UserCreateSerializer(ModelSerializer):
@@ -26,6 +32,16 @@ class UserCreateSerializer(ModelSerializer):
         user_sources = UserSources(user=user)
         user_sources.save()
         return user
+
+
+class UserSourcesSerializer(ModelSerializer):
+    class Meta:
+        model = UserSources
+        fields = (
+            'seen_last',
+            'total_seen_post',
+            'total_seen_time',
+        )
 
 
 class UserSettingsSerializer(ModelSerializer):

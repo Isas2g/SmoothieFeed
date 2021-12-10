@@ -1,5 +1,6 @@
 from rest_framework import status
-from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView, get_object_or_404, \
+from rest_framework.generics import RetrieveAPIView, CreateAPIView, RetrieveUpdateAPIView, \
+    get_object_or_404, \
     ListCreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -9,6 +10,34 @@ from .serializers import *
 
 class UserCreateView(CreateAPIView):
     serializer_class = UserCreateSerializer
+
+
+class UserRetrieveView(RetrieveAPIView):
+    serializer_class = UserRetrieveSerializer
+    queryset = User.objects.all()
+
+
+class UserSourcesRetrieveUpdateView(RetrieveUpdateAPIView, JWTTokenUserAuthentication):
+    permission_classes = [IsAuthenticated]
+    queryset = UserSources.objects.all()
+    serializer_class = UserSourcesSerializer
+    lookup_field = 'user_id'
+
+    def put(self, request, *args, **kwargs):
+        self.user_id = self.authenticate(request)[0].pk
+        return self.update(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        self.user_id = self.authenticate(request)[0].pk
+        return self.retrieve(request, *args, **kwargs)
+
+    def get_object(self):
+        queryset = self.filter_queryset(self.get_queryset())
+
+        filter_kwargs = {'user_id': self.user_id}
+        obj = get_object_or_404(queryset, **filter_kwargs)
+        self.check_object_permissions(self.request, obj)
+        return obj
 
 
 class UserSettingsRetrieveUpdateView(RetrieveUpdateAPIView, JWTTokenUserAuthentication):

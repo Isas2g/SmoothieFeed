@@ -31,7 +31,7 @@ class UserSettingsAdmin(ModelAdmin):
 
 @admin.register(UserSources)
 class UserSourcesAdmin(ModelAdmin):
-    list_display = ('id', 'last_seen', 'total_seen_post', 'total_seen_time', 'get_user')
+    list_display = ('id', 'seen_last', 'total_seen_post', 'total_seen_time', 'get_user')
 
     @display(description='User')
     def get_user(self, obj):
