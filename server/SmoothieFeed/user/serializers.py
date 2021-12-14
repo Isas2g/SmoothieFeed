@@ -1,5 +1,5 @@
 from django.db import IntegrityError
-from rest_framework.serializers import ModelSerializer, raise_errors_on_nested_writes
+from rest_framework.serializers import ModelSerializer, raise_errors_on_nested_writes, CharField
 from rest_framework_simplejwt.authentication import JWTTokenUserAuthentication
 
 from .models import *
@@ -13,10 +13,11 @@ class UserRetrieveSerializer(ModelSerializer):
 
 
 class UserCreateSerializer(ModelSerializer):
+    password = CharField(write_only=True)
+
     class Meta:
         model = User
         fields = ('id', 'email', 'username', 'password')
-        extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
         user = User(

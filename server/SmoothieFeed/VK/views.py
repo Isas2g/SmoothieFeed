@@ -62,5 +62,5 @@ class NewsVKView(APIView, JWTTokenUserAuthentication):
         token = UserUseSocialMedia.objects.get(user_id=user_id, media=VK).token
         vk_session = vk_api.VkApi(token=token)
         vk = vk_session.get_api()
-        news = get_sort_news(vk.newsfeed.getRecommended(count=1))
+        news = get_sort_news(vk.newsfeed.getRecommended(count=20))
         return Response(news, status=status.HTTP_200_OK)

@@ -13,8 +13,12 @@ class DetoxLevel(Model):
         unique=True,
         verbose_name='название'
     )
-    post = IntegerField(default=0)
-    time = DurationField(default=timedelta(minutes=0))
+    post = IntegerField(
+        default=0,
+        verbose_name='посты')
+    time = DurationField(
+        default=timedelta(minutes=0),
+        verbose_name='время')
 
     class Meta:
         db_table = 'API_detox_level'

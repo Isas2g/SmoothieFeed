@@ -3,3 +3,6 @@ server/node_modules
 server/src/.env
 server/SmoothieFeed/.env
 server/SmoothieFeed/venv
+server/SmoothieFeed/docker-compose.yml
+server/SmoothieFeed/Dockerfile
+server/SmoothieFeed/Procfile
