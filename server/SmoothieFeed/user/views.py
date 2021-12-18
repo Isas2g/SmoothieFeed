@@ -12,9 +12,23 @@ class UserCreateView(CreateAPIView):
     serializer_class = UserCreateSerializer
 
 
-class UserRetrieveView(RetrieveAPIView):
+class UserRetrieveView(RetrieveAPIView, JWTTokenUserAuthentication):
+    permission_classes = [IsAuthenticated]
     serializer_class = UserRetrieveSerializer
     queryset = User.objects.all()
+    lookup_field = 'id'
+
+    def get(self, request, *args, **kwargs):
+        self.user_id = self.authenticate(request)[0].pk
+        return self.retrieve(request, *args, **kwargs)
+
+    def get_object(self):
+        queryset = self.filter_queryset(self.get_queryset())
+
+        filter_kwargs = {'id': self.user_id}
+        obj = get_object_or_404(queryset, **filter_kwargs)
+        self.check_object_permissions(self.request, obj)
+        return obj
 
 
 class UserSourcesRetrieveUpdateView(RetrieveUpdateAPIView, JWTTokenUserAuthentication):
