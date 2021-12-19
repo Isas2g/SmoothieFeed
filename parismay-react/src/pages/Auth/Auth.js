@@ -10,10 +10,10 @@ import facebook from "@assets/images/social-facebook.svg";
 import twitter from "@assets/images/social-twitter.svg";
 import AuthOnboarding from "@pages/Auth/components/AuthOnboarding";
 
-const Auth = () => {
+const Auth = ({display}) => {
 
 	return <main className="main-entry container">
-			<AuthOnboarding />
+			<AuthOnboarding display={display} />
 			<img className="main-entry__image" src={social} alt="#"/>
 			<div className="main-entry__entry entry">
 				<h1 className="entry__title">Войти на сайт</h1>

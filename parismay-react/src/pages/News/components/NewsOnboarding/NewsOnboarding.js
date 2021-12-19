@@ -3,9 +3,9 @@ import woman from "@assets/images/onboarding-news.png";
 import {Link} from "react-router-dom";
 import {routes} from "@configs/routes";
 
-const NewsOnboarding = () => {
+const NewsOnboarding = ({display, onboardingHideDisplay}) => {
     return (
-        <div className="onboarding">
+        <div className={"onboarding" + (display !== undefined ? " " + display : "")}>
             <img src={woman} alt="" className="onboarding__woman woman"/>
             <div className="onboarding__dots">
                 <Link to={routes.home.index} className="onboarding__dot"></Link>
@@ -14,7 +14,7 @@ const NewsOnboarding = () => {
                 <Link to={routes.programs.index} className="onboarding__dot"></Link>
                 <Link to={routes.news.index} className="onboarding__dot active"></Link>
             </div>
-            <Link to="#" className="onboarding__next">Завершить</Link>
+            <Link to={routes.home.index} onClick={() => onboardingHideDisplay(display)} className="onboarding__next">Завершить</Link>
         </div>
     );
 };

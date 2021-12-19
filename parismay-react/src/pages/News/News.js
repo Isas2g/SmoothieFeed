@@ -8,7 +8,7 @@ import social from '@assets/images/bg-social.png';
 import './News.scss';
 import NewsOnboarding from "@pages/News/components/NewsOnboarding";
 
-const News = ({store}) => {
+const News = ({store, display, onboardingHideDisplay}) => {
 	const page = React.useRef(null);
 	
 	React.useEffect(() => {
@@ -23,7 +23,7 @@ const News = ({store}) => {
 	}, []);
 	
 	return <div className="news" ref={page}>
-		<NewsOnboarding />
+		<NewsOnboarding display={display} onboardingHideDisplay={onboardingHideDisplay}/>
 		<img className="news__image" src={social} alt="#"/>
 		<div className="news__content container">
 			<div className="news__inner">

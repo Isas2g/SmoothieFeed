@@ -9,10 +9,10 @@ import twitter from "@assets/images/social-twitter.svg";
 import "./ChooseSocial.scss";
 import social from "@assets/images/bg-social.png";
 
-const ChooseSocial = () => {
+const ChooseSocial = ({display}) => {
     return (
         <main className="main main__choose-social choose-social opacity">
-            <SocialOnboarding />
+            <SocialOnboarding display={display} />
             <img className="preview__image preview__image_social" src={social} alt="#"/>
             <h1 className="choose-social__title">Выбери соцсети для отбора постов</h1>
             <div className="choose-social__icons">

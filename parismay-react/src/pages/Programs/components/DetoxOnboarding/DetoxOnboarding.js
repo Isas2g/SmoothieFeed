@@ -3,9 +3,9 @@ import woman from "@assets/images/onboarding-programs.png";
 import {Link} from "react-router-dom";
 import {routes} from "@configs/routes";
 
-const DetoxOnboarding = () => {
+const DetoxOnboarding = ({display}) => {
     return (
-        <div className="onboarding">
+        <div className={"onboarding" + (display !== undefined ? " " + display : "")}>
             <img src={woman} alt="" className="onboarding__woman woman"/>
             <div className="onboarding__dots">
                 <Link to={routes.home.index} className="onboarding__dot"></Link>

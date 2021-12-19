@@ -9,7 +9,7 @@ import './Main.scss';
 import MainOnboarding from "@pages/Main/components/MainOnboarding";
 import {useState} from "react";
 
-const Main = ({detoxPrograms, reviews}) => {
+const Main = ({detoxPrograms, reviews, display, onboardingDisplay}) => {
 	const page = React.useRef(null);
 
 	React.useEffect(() => {
@@ -17,12 +17,6 @@ const Main = ({detoxPrograms, reviews}) => {
 		
 		return () => clearTimeout(timeout);
 	}, []);
-
-	const [display, changeDisplay] = useState();
-
-	function onboardingDisplay(display) {
-		changeDisplay(display = "onboardingVisible")
-	}
 
 	return <div ref={page} className="main">
 		<button onClick={() => onboardingDisplay(display)} className="tutorial-button">Туториал</button>

@@ -8,10 +8,10 @@ import "./Programs.scss";
 import DetoxOnboarding from "@pages/Programs/components/DetoxOnboarding";
 import social from "@assets/images/bg-social.png";
 
-const Programs = () => {
+const Programs = ({display}) => {
 	// TODO: Переделать полностью страницу Programs (Сделать вывод программ через компонент DetoxCard)
 	return <main className="main opacity">
-			<DetoxOnboarding />
+			<DetoxOnboarding display={display} />
 			<img className="preview__image preview__image_social" src={social} alt="#"/>
 			<div className="container">
 				<div className="main__programs programs">

@@ -23,6 +23,7 @@ import {routes} from '@configs/routes';
 import MainStore from '@store/MainStore';
 import HeaderEntry from "@components/HeaderEntry";
 import ChooseSocial from "@pages/ChooseSocial";
+import {useState} from "react";
 
 const App = () => {
 	const mainStore = useLocalStore(() => new MainStore());
@@ -84,26 +85,48 @@ const App = () => {
 	}, []);
 	
 	const location = useLocation();
+
+	const [display, changeDisplay] = useState();
+
+	function onboardingDisplay(display) {
+		changeDisplay(display = "onboardingVisible")
+	}
+
+	function onboardingHideDisplay(display) {
+		changeDisplay(display = "")
+	}
 	
 	return <div>
 		{(location?.pathname !== routes.auth.index && location?.pathname !== routes.chooseSocial.index) && <Header/>}
 
 		<Switch>
 			<Route exact path={routes.home.index}>
+
 				<Main
+					display={display}
+					onboardingDisplay={onboardingDisplay}
 					detoxPrograms={detoxPrograms}
 					reviews={reviews}
 				/>
 			</Route>
 			<Route exact path={routes.news.index}>
-				<News store={mainStore}/>
+				<News
+					store={mainStore}
+					display={display}
+					onboardingDisplay={onboardingDisplay}
+					onboardingHideDisplay={onboardingHideDisplay}
+				/>
 			</Route>
 			<Route exact path={routes.auth.index}>
 				<HeaderEntry />
-				<Auth/>
+				<Auth
+					display={display}
+				/>
 			</Route>
 			<Route exact path={routes.programs.index}>
-				<Programs/>
+				<Programs
+					display={display}
+				/>
 			</Route>
 			<Route exact path={routes.achievements.index}>
 				<Achievements/>
@@ -115,7 +138,9 @@ const App = () => {
 				<TokenPage/>
 			</Route>
 			<Route exact path={routes.chooseSocial.index}>
-				<ChooseSocial />
+				<ChooseSocial
+					display={display}
+				/>
 			</Route>
 			<Redirect to={routes.home.index}/>
 		</Switch>
