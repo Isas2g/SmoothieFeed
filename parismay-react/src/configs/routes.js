@@ -20,4 +20,7 @@ export const routes = {
 	tokenPage: {
 		index: '/token_page',
 	},
+	chooseSocial: {
+		index: '/chooseSocial',
+	},
 };

@@ -1,0 +1,58 @@
+@import "../../../../styles/vars";
+
+// TODO: Сделать отдельный файл с общими стилями для onboarding!!
+
+.onboarding {
+  z-index: 10;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.29);
+  width: 100vw;
+  height: 100vh;
+
+
+
+  &__woman {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+  }
+  &__dots {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -65px;
+  }
+
+  .active {
+    width: 18px;
+    height: 18px;
+    background: none;
+    border: 3px solid $onboarding-dots;
+  }
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $onboarding-dots;
+    pointer-events: auto;
+
+    &:not(:first-of-type) {
+      margin-left: 20px;
+    }
+  }
+
+  &__next {
+    color: $onboarding-next;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: absolute;
+    right: 150px;
+    top: 150px;
+    pointer-events: auto;
+
+  }
+
+}

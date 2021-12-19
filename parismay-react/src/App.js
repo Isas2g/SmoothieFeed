@@ -11,8 +11,8 @@ import {useLocalStore} from '@utils/hooks/useLocal';
 import Main         from '@pages/Main/Main';
 import News         from '@pages/News/News';
 import Auth         from '@pages/Auth/Auth';
-import Programs     from '@pages/Programs';
-import Achievements from '@pages/Achievements/Achievements';
+import Programs     from '@pages/Programs/Programs';
+import Achievements from '@pages/Achievements';
 import AboutUs      from '@pages/AboutUs/AboutUs';
 import TokenPage    from '@pages/TokenPage';
 
@@ -22,6 +22,7 @@ import {routes} from '@configs/routes';
 
 import MainStore from '@store/MainStore';
 import HeaderEntry from "@components/HeaderEntry";
+import ChooseSocial from "@pages/ChooseSocial";
 
 const App = () => {
 	const mainStore = useLocalStore(() => new MainStore());
@@ -85,7 +86,8 @@ const App = () => {
 	const location = useLocation();
 	
 	return <div>
-		{location?.pathname !== routes.auth.index && <Header/>}
+		{(location?.pathname !== routes.auth.index && location?.pathname !== routes.chooseSocial.index) && <Header/>}
+
 		<Switch>
 			<Route exact path={routes.home.index}>
 				<Main
@@ -111,6 +113,9 @@ const App = () => {
 			</Route>
 			<Route exact path={routes.tokenPage.index}>
 				<TokenPage/>
+			</Route>
+			<Route exact path={routes.chooseSocial.index}>
+				<ChooseSocial />
 			</Route>
 			<Redirect to={routes.home.index}/>
 		</Switch>

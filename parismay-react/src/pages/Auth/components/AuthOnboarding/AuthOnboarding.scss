@@ -1,0 +1,33 @@
+@import "../../../../styles/vars";
+
+.onboarding {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &__auth {
+    background: none;
+    pointer-events: none;
+  }
+
+  &__dot {
+    &--black {
+      background-color: $onboarding-dots-black;
+
+    }
+  }
+  .active {
+    &--black {
+      border-color: $onboarding-dots-black;
+    }
+  }
+  &__next {
+    &--black {
+      color: $onboarding-next-black;
+    }
+  }
+}
+
+.woman {
+  height: 60%;
+}

@@ -6,17 +6,27 @@ import Detox      from './components/Detox';
 import Reviews    from './components/Reviews';
 
 import './Main.scss';
+import MainOnboarding from "@pages/Main/components/MainOnboarding";
+import {useState} from "react";
 
 const Main = ({detoxPrograms, reviews}) => {
 	const page = React.useRef(null);
-	
+
 	React.useEffect(() => {
 		const timeout = setTimeout(() => page.current.classList.add('main_active'), 200);
 		
 		return () => clearTimeout(timeout);
 	}, []);
-	
+
+	const [display, changeDisplay] = useState();
+
+	function onboardingDisplay(display) {
+		changeDisplay(display = "onboardingVisible")
+	}
+
 	return <div ref={page} className="main">
+		<button onClick={() => onboardingDisplay(display)} className="tutorial-button">Туториал</button>
+		<MainOnboarding display={display} />
 		<Preview/>
 		<HowItWorks/>
 		<Detox detoxPrograms={detoxPrograms}/>

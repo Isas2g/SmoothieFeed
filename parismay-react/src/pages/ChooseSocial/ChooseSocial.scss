@@ -1,0 +1,21 @@
+.choose-social {
+  margin: 20vh 0 0 0;
+  &__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0 0 0;
+  }
+  &__image {
+    width: 80px;
+    height: 80px;
+  }
+  &__item {
+    &:not(:first-of-type) {
+      margin: 0 0 0 3rem;
+    }
+  }
+  &__title {
+    text-align: center;
+  }
+}

@@ -6,6 +6,7 @@ import List         from './components/List';
 import social from '@assets/images/bg-social.png';
 
 import './News.scss';
+import NewsOnboarding from "@pages/News/components/NewsOnboarding";
 
 const News = ({store}) => {
 	const page = React.useRef(null);
@@ -22,6 +23,7 @@ const News = ({store}) => {
 	}, []);
 	
 	return <div className="news" ref={page}>
+		<NewsOnboarding />
 		<img className="news__image" src={social} alt="#"/>
 		<div className="news__content container">
 			<div className="news__inner">

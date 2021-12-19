@@ -1,0 +1,116 @@
+@import "../../styles/breakpoints";
+@import "../../styles/vars";
+
+.main {
+  &__programs {
+    margin: 10rem 0 5rem 0;
+  }
+}
+
+.programs {
+  &__title {
+    text-align: center;
+  }
+}
+
+.opacity {
+  opacity: 1;
+  filter: none;
+  transition: none;
+}
+
+.your-program {
+  margin: 3rem 0 5rem 0;
+
+  &__icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $programs-icon-bg;
+  }
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__post-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0 2rem 0 2rem;
+  }
+  &__input {
+    width: 4.5rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+
+  &__other {
+    display: flex;
+    align-items: center;
+  }
+
+  &__or {
+    font-size: 2rem;
+    margin: 0 2rem;
+  }
+  &__submit {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  &__title {
+    text-align: center;
+  }
+}
+
+.detox-program {
+  min-height: 700px;
+  padding: 10rem 0;
+
+  &__title {
+    text-align: center;
+    padding-bottom: 4rem;
+  }
+
+  &__block-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    border-top: 0.3px solid rgba(0, 0, 0, 0.157);
+    border-bottom: 0.3px solid rgba(0, 0, 0, 0.157);
+  }
+  &__post-title {
+    text-transform: uppercase;
+    padding: 0 0.5rem;
+  }
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0 0 0;
+  }
+  &__block {
+    flex-basis: 31%;
+    border-radius: 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.157);
+    padding: 3rem 0;
+  }
+  &__image {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+  }
+}
+.easy-program {
+  background-color: $detox-easy-bg;
+}
+.medium-program {
+  background-color: $detox-medium-bg;
+}
+.hard-program {
+  background-color: $detox-hard-bg;
+}

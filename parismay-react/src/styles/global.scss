@@ -194,6 +194,28 @@ body {
   position: relative;
 }
 
+.onboarding {
+  display: none;
+}
+
+.onboardingVisible {
+  display: block;
+}
+
+.tutorial-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  color: $tutorial-button-text;
+  background-color: $tutorial-button-bg;
+  padding: 1rem 2.5rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  border: none;
+  z-index: 5;
+  pointer-events: auto;
+}
+
 h1 {
   font-family: "Montserrat Bold", sans-serif;
   font-size: 3rem;
