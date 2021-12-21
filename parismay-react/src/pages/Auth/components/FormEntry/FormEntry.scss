@@ -1,9 +1,10 @@
 @import "../../../../styles/vars";
 @import "../../../../styles/breakpoints";
 
-.entry-form {
+.form {
   display: flex;
   flex-direction: column;
+  margin: 2rem 0;
 
 
   &__input-text {

@@ -15,11 +15,11 @@ const Auth = ({display}) => {
 	return <main className="main-entry container">
 			<AuthOnboarding display={display} />
 			<img className="main-entry__image" src={social} alt="#"/>
-			<div className="main-entry__entry entry">
-				<h1 className="entry__title">Войти на сайт</h1>
+			<div className="main-entry__form-block form-block">
+				<h1 className="form-block__title">Войти на сайт</h1>
 				<FormEntry/>
 				<hr className="hr-line"/>
-				<div className="entry__social social">
+				<div className="form-block__social social">
 					<h2 className="social__title">или</h2>
 					<div className="social__icons">
 						<Link className="social__link">

@@ -23,4 +23,7 @@ export const routes = {
 	chooseSocial: {
 		index: '/chooseSocial',
 	},
+	registration: {
+		index: '/registration',
+	},
 };

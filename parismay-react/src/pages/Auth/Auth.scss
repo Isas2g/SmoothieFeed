@@ -1,7 +1,7 @@
 @import "../../styles/vars";
 @import "../../styles/breakpoints";
 
-.entry {
+.form-block {
   background-color: $entry-form-bg;
   padding: 2rem;
   border-radius: 2rem;
@@ -60,7 +60,7 @@
 //min-width
 
 @media (min-width: $screen-lg + 1) {
-  .entry {
+  .form-block {
     max-width: 65%;
   }
 }
@@ -74,20 +74,20 @@
 // max-width
 
 @media (max-width: $screen-lg) {
-  .entry {
+  .form-block {
     max-width: 70%;
   }
 }
 
 @media (max-width: $screen-md) {
-  .entry {
+  .form-block {
     max-width: 80%;
   }
 
 }
 
 @media (max-width: $screen-sm) {
-  .entry {
+  .form-block {
     max-width: 100%;
   }
   .main-entry {

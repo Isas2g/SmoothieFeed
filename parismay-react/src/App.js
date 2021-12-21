@@ -24,6 +24,7 @@ import MainStore from '@store/MainStore';
 import HeaderEntry from "@components/HeaderEntry";
 import ChooseSocial from "@pages/ChooseSocial";
 import {useState} from "react";
+import Registration from "@pages/Registration";
 
 const App = () => {
 	const mainStore = useLocalStore(() => new MainStore());
@@ -97,7 +98,7 @@ const App = () => {
 	}
 	
 	return <div>
-		{(location?.pathname !== routes.auth.index && location?.pathname !== routes.chooseSocial.index) && <Header/>}
+		{(location?.pathname !== routes.auth.index && location?.pathname !== routes.chooseSocial.index && location?.pathname !== routes.registration.index) && <Header/>}
 
 		<Switch>
 			<Route exact path={routes.home.index}>
@@ -141,6 +142,10 @@ const App = () => {
 				<ChooseSocial
 					display={display}
 				/>
+			</Route>
+			<Route exact path={routes.registration.index}>
+				<HeaderEntry />
+				<Registration />
 			</Route>
 			<Redirect to={routes.home.index}/>
 		</Switch>
