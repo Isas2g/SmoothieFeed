@@ -55,8 +55,7 @@ class UserSettingsSerializer(ModelSerializer):
         )
 
 
-class UserUseSocialMediaSerializer(ModelSerializer, JWTTokenUserAuthentication):
-    media = SocialMediaSerializer()
+class UserUseSocialMediaWriteSerializer(ModelSerializer, JWTTokenUserAuthentication):
 
     class Meta:
         model = UserUseSocialMedia
@@ -67,16 +66,25 @@ class UserUseSocialMediaSerializer(ModelSerializer, JWTTokenUserAuthentication):
 
     def create(self, validated_data):
         user_id = self.authenticate(self.context['request'])[0].pk
-
         user = User.objects.get(id=user_id)
         use = UserUseSocialMedia(
             user=user,
-            media=SocialMedia.objects.get(id=validated_data['media']),
+            media=validated_data['media'],
             token=validated_data['token'],
         )
         use.save()
         return use
 
+
+class UserUseSocialMediaReadSerializer(ModelSerializer, JWTTokenUserAuthentication):
+    media = SocialMediaSerializer()
+
+    class Meta:
+        model = UserUseSocialMedia
+        fields = (
+            'media',
+            'token'
+        )
 
 class SubscribesSerializer(ModelSerializer, JWTTokenUserAuthentication):
 

@@ -80,7 +80,6 @@ class UserSettingsRetrieveUpdateView(RetrieveUpdateAPIView, JWTTokenUserAuthenti
 
 class UserUseSocialMediaView(ListCreateAPIView, JWTTokenUserAuthentication):
     permission_classes = [IsAuthenticated]
-    serializer_class = UserUseSocialMediaSerializer
     queryset = UserUseSocialMedia.objects.all()
     user_id = None
     lookup_field = 'user_id'
@@ -95,6 +94,12 @@ class UserUseSocialMediaView(ListCreateAPIView, JWTTokenUserAuthentication):
     def get(self, request, *args, **kwargs):
         self.user_id = self.authenticate(request)[0].pk
         return self.list(request, *args, **kwargs)
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return UserUseSocialMediaReadSerializer
+        elif self.request.method == 'POST':
+            return UserUseSocialMediaWriteSerializer
 
     def filter_queryset(self, queryset):
         return queryset.filter(user_id=self.user_id)
