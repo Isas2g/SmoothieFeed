@@ -86,6 +86,7 @@ class UserUseSocialMediaReadSerializer(ModelSerializer, JWTTokenUserAuthenticati
             'token'
         )
 
+
 class SubscribesSerializer(ModelSerializer, JWTTokenUserAuthentication):
 
     class Meta:

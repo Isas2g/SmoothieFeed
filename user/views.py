@@ -1,7 +1,6 @@
 from rest_framework import status
 from rest_framework.generics import RetrieveAPIView, CreateAPIView, RetrieveUpdateAPIView, \
-    get_object_or_404, \
-    ListCreateAPIView
+    get_object_or_404, ListCreateAPIView, DestroyAPIView, UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -78,7 +77,7 @@ class UserSettingsRetrieveUpdateView(RetrieveUpdateAPIView, JWTTokenUserAuthenti
         return obj
 
 
-class UserUseSocialMediaView(ListCreateAPIView, JWTTokenUserAuthentication):
+class UserUseSocialMediaListCreateView(ListCreateAPIView, UpdateAPIView, DestroyAPIView, JWTTokenUserAuthentication):
     permission_classes = [IsAuthenticated]
     queryset = UserUseSocialMedia.objects.all()
     user_id = None
@@ -91,18 +90,26 @@ class UserUseSocialMediaView(ListCreateAPIView, JWTTokenUserAuthentication):
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
-    def get(self, request, *args, **kwargs):
-        self.user_id = self.authenticate(request)[0].pk
-        return self.list(request, *args, **kwargs)
-
     def get_serializer_class(self):
         if self.request.method == 'GET':
             return UserUseSocialMediaReadSerializer
-        elif self.request.method == 'POST':
+        elif self.request.method in ('POST', 'PUT', 'PATCH'):
             return UserUseSocialMediaWriteSerializer
 
     def filter_queryset(self, queryset):
+        self.user_id = self.authenticate(self.request)[0].pk
         return queryset.filter(user_id=self.user_id)
+
+    def get_object(self):
+        queryset = self.filter_queryset(self.get_queryset())
+
+        user_social_media_id = self.request.data['media']
+        user_social_media = SocialMedia.objects.get(id=user_social_media_id)
+
+        filter_kwargs = {'media': user_social_media}
+        obj = get_object_or_404(queryset, **filter_kwargs)
+        self.check_object_permissions(self.request, obj)
+        return obj
 
 
 class SubscribesListCreateView(ListCreateAPIView, JWTTokenUserAuthentication):
