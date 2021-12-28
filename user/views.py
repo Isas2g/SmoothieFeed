@@ -77,7 +77,7 @@ class UserSettingsRetrieveUpdateView(RetrieveUpdateAPIView, JWTTokenUserAuthenti
         return obj
 
 
-class UserUseSocialMediaListCreateView(ListCreateAPIView, UpdateAPIView, DestroyAPIView, JWTTokenUserAuthentication):
+class UserUseSocialMediaView(ListCreateAPIView, UpdateAPIView, DestroyAPIView, JWTTokenUserAuthentication):
     permission_classes = [IsAuthenticated]
     queryset = UserUseSocialMedia.objects.all()
     user_id = None
