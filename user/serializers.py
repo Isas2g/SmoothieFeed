@@ -2,6 +2,7 @@ from django.db import IntegrityError
 from rest_framework.serializers import ModelSerializer, raise_errors_on_nested_writes, CharField
 from rest_framework_simplejwt.authentication import JWTTokenUserAuthentication
 
+from social_media.models import SocialMedia
 from .models import *
 from social_media.serializers import SocialMediaSerializer
 
@@ -54,8 +55,7 @@ class UserSettingsSerializer(ModelSerializer):
         )
 
 
-class UserUseSocialMediaSerializer(ModelSerializer, JWTTokenUserAuthentication):
-    media = SocialMediaSerializer()
+class UserUseSocialMediaWriteSerializer(ModelSerializer, JWTTokenUserAuthentication):
 
     class Meta:
         model = UserUseSocialMedia
@@ -74,6 +74,17 @@ class UserUseSocialMediaSerializer(ModelSerializer, JWTTokenUserAuthentication):
         )
         use.save()
         return use
+
+
+class UserUseSocialMediaReadSerializer(ModelSerializer, JWTTokenUserAuthentication):
+    media = SocialMediaSerializer()
+
+    class Meta:
+        model = UserUseSocialMedia
+        fields = (
+            'media',
+            'token'
+        )
 
 
 class SubscribesSerializer(ModelSerializer, JWTTokenUserAuthentication):

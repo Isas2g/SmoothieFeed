@@ -4,7 +4,7 @@ from .views import *
 
 urlpatterns = [
     path('', UserRetrieveView.as_view()),
-    path('', UserCreateView.as_view()),
+    path('create/', UserCreateView.as_view()),
     path('sources/', UserSourcesRetrieveUpdateView.as_view()),
     path('settings/', UserSettingsRetrieveUpdateView.as_view()),
     path('subscribes/', SubscribesListCreateView.as_view()),

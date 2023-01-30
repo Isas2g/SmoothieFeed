@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from datetime import timedelta
 
+import django_heroku
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -19,12 +20,14 @@ from pathlib import Path
 import dj_database_url
 
 load_dotenv()
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
-# SECURITY WARNING: keep the secret key used in production secret!
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 try:
     SECRET_KEY = os.environ["SECRET_KEY"]
 except KeyError:
@@ -64,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'SmoothieFeed.urls'
 
@@ -188,3 +192,6 @@ SWAGGER_SETTINGS = {
       }
    }
 }
+
+
+django_heroku.settings(locals())
